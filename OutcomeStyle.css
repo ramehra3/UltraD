@@ -1,0 +1,229 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 48vw 49vw;
+    grid-template-rows: 10vw 25vw 31vw 10vw;
+    gap: 1px 1px;
+    grid-template-areas:
+    "Outcome Points"
+    "Action Key"
+    "Remember Key"
+    "Point-Breakdown Navigation";
+}
+.Outcome { grid-area: Outcome;
+    font-size:3vw;}
+
+.Points { grid-area: Points;
+    margin-top:3vw;
+    font-size:2vw;}
+.Action { grid-area: Action;
+}
+
+#explanation {
+    font-size:1.5vw;
+}
+
+.Remember { grid-area: Remember;
+    border:solid;
+    border-radius:5px;
+    margin: 1vw;
+    border-width:thick;
+    border-color:purple;
+}
+.Key { grid-area: Key;}
+
+.Navigation {
+    display: grid;
+    grid-template-columns: 20vw 30vw;
+    grid-template-rows: 10vw 10vw;
+    gap: 1px 1px;
+    grid-template-areas:
+    "Retry NextCase"
+    "Review-Set Progress-Report";
+    grid-area: Navigation;
+    align-items: center;
+    display:inline-grid;
+}
+.Retry { grid-area: Retry; }
+.Review-Set { grid-area: Review-Set; }
+.Progress-Report { grid-area: Progress-Report; }
+.NextCase { grid-area: NextCase;}
+
+.Point-Breakdown {
+    grid-area: Point-Breakdown;
+    display: grid;
+    font-size:2vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas:
+    "points points"
+    "Decision-Making decPoints"
+    "Image-Acquisition imagePoints"
+    "Time timePoints"
+    "Total totalPoints";
+}
+.points { grid-area: points;
+    text-align:center;}
+.Decision-Making { grid-area: Decision-Making; }
+.decPoints { grid-area: decPoints; }
+.Image-Acquisition { grid-area: Image-Acquisition; }
+.Time { grid-area: Time; }
+.Total { grid-area: Total; }
+.imagePoints { grid-area: imagePoints; }
+.timePoints { grid-area: timePoints; }
+.totalPoints { grid-area: totalPoints; }
+
+
+#result {
+    color:red;
+
+}
+
+#actionicon {
+    background-color:black;
+    border-radius:50%;
+    height:6vw;
+}
+#action {
+
+}
+
+
+h3 {
+    color:purple;
+    font-size:2vw;
+}
+
+#takeAwayBox {
+    border:dot-dot-dash;
+}
+
+.remember{
+    height:8vw;
+}
+
+figure {
+    text-align:center;
+    font-size:2.5vw;
+}
+
+.arrow {
+    height:4vw;
+}
+
+#imageBreakdown {
+
+}
+#keyImage {
+    height:33vw;
+}
+#diagnosis {
+    font-size:3vw;
+    margin-bottom:0;
+    text-align:center;
+}
+
+#pointBreakdown{
+
+}
+
+.RetryButton {
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+    background-color:#ffffff;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    cursor:pointer;
+    color:#666666;
+    font-family:Arial;
+    font-size:2vw;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+}
+.RetryButton:hover {
+    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+    background-color:#f6f6f6;
+}
+.RetryButton:active {
+    position:relative;
+    top:1px;
+}
+.NextCaseButton {
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+    background-color:#ffffff;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    cursor:pointer;
+    color:#666666;
+    font-family:Arial;
+    font-size:2vw;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+}
+.NextCaseButton:hover {
+    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+    background-color:#f6f6f6;
+}
+.NextCaseButton:active {
+    position:relative;
+    top:1px;
+}
+
+.ReviewShiftButton {
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+    background-color:#ffffff;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    cursor:pointer;
+    color:#666666;
+    font-family:Arial;
+    font-size:2vw;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+}
+.ReviewShiftButton:hover {
+    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+    background-color:#f6f6f6;
+}
+.ReviewShiftButton:active {
+    position:relative;
+    top:1px;
+}
+
+.EndShiftButton {
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+    background-color:#ffffff;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    cursor:pointer;
+    color:#666666;
+    font-family:Arial;
+    font-size:2vw;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+}
+.EndShiftButton:hover {
+    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+    background-color:#f6f6f6;
+}
+
+.EndShiftButton:active {
+    position:relative;
+    top:1px;
+}
+
