@@ -10,13 +10,37 @@ class CaseData {
         this.oxy = oxy;}
 }
 
-let case1 = new CaseData(37, "male", "presents after an MVC in which he was a restrained driver. GCS 14. Complains of diffuse discomfort, with multiple large contusions on his chest, abdomen, and legs.", 113, 76, 89, 36.0, 94);
+let case1 = new CaseData(37, //age
+    "male", //gender
+    "presents after an MVC in which he was a restrained driver. GCS 14. Complains of diffuse discomfort, with multiple large contusions on his chest, abdomen, and legs.",
+    113, //bpsys
+    76, //bpdia
+    89, //hr
+    36.0, //tcelcius
+    94); //o2
+
+class caseOutcomes {
+    constructor(outcomeObs, outcomeCT, outcomeSurg, outcomeInt) {
+        this.outcomeObs = outcomeObs;
+        this.outcomeCT = outcomeCT;
+        this.outcomeSurg = outcomeSurg;
+        this.outcomeInt = outcomeInt;
+    }
+}
+    
+let case1Outcomes = new caseOutcomes(
+    "This patient's FAST exam is positive in the left upper quadrant. Patient is admitted overnight for further observation, and spends the night in excruciating pain without a clue as to why. The next day, a CT scan reveals a grade II splenic laceration which you missed.",
+    "This patient's FAST exam is positive in the left upper quadrant. You take the patient for a CT scan, which reveals a grade II splenic laceration. Patient is admitted overnight.",
+    "This patient's FAST exam is positive in the left upper quadrant. Patient is rushed to the operating room for an exploratory laparotomy, which finds no evidence of damage. Patient is discharged home with a scar and a story to remember you by.",
+    "This patient's FAST exam is positive in the left upper quadrant. You perform a needle thoracostomy and place a chest tube in the patient's left chest which does not put out any fluid. A colleague suggests sending the patient for a CT scan, which ultimately reveals a grade II splenic laceration. Patient is admitted overnight with a new story to tell his wife, a malpractice attorney."
+    );
+    
 
 document.getElementById("caseDetails").innerHTML =
     ("A " + case1.age + "-year-old " + case1.gender + " " + case1.scenario);
 document.getElementById("BP").innerHTML =("BP: " + case1.bpsys + "/" + case1.bpdia);
 document.getElementById("HR").innerHTML =("HR: " + case1.hr);
-document.getElementById("T").innerHTML =("T: " + case1.tempc +"°C"); //fix degree symbol//
+document.getElementById("T").innerHTML =("T: " + case1.tempc +"&degC"); //fix degree symbol//
 document.getElementById("O2").innerHTML =("spO2: " + case1.oxy +"%");
 
 
@@ -34,7 +58,6 @@ function showActions() {
         x.style.display = "block";}
     else {x.style.display = "none";}
 }
-
 let sec = 0;
 function pad(val) {return val > 9 ? val : "0" + val;}
 let timer = setInterval(function () {
@@ -107,121 +130,47 @@ for (var i = 0; i < btns.length; i++) {
     });
 }
 
+//Action Buttons Here
 function actionObs() {
-    actionChoice = "Observation";
+    localStorage.setItem("actionChoice1", "Observation");//want to store this choice and reference it later (in Albo)
     window.location.href = "Outcome1-Obs.html";
+    document.getElementById("c1result").innerHTML = localStorage.getItem("actionChoice1");
+    document.getElementById("explanationObs").innerText = (case1Outcomes.outcomeObs);
 }
 
 
 function actionCT() {
-    actionChoice = "CT Scan";
+    localStorage.setItem("actionChoice1", "CT Scan");
     window.location.href = "Outcome1-CT.html";
+    document.getElementById("c1result").innerHTML = localStorage.getItem("actionChoice1");
+    document.getElementById("explanationCT").innerText = (case1Outcomes.outcomeCT);
 }
 
 function actionSurg() {
-    actionChoice = "Surgery";
+    localStorage.setItem("actionChoice1", "Surgery");
     window.location.href = "Outcome1-Surg.html";
+    document.getElementById("c1result").innerHTML = localStorage.getItem("actionChoice1");
+    document.getElementById("explanationSurg").innerText = (case1Outcomes.outcomeSurg);
+
 }
 
 function actionIntervene() {
-    actionChoice = "Intervention";
+    localStorage.setItem("actionChoice1", "Intervention");
     window.location.href = "Outcome1-Intervene.html";
-}
-/*
-class caseOutcomes {
-    constructor(outcomeObs, outcomeCT, outcomeSurg, outcomeInt) {
-        this.outcomeObs = outcomeObs;
-        this.outcomeCT = outcomeCT;
-        this.outcomeSurg = outcomeSurg;
-        this.outcomeInt = outcomeInt;
-    }
+    document.getElementById("c1result").innerHTML = localStorage.getItem("actionChoice1");
+    document.getElementById("explanationInt").innerText = (case1Outcomes.outcomeInt);
 }
 
-let case1Outcomes = new caseOutcomes("This patient's FAST exam is positive in the left upper quadrant. Patient is admitted overnight for further observation, and spends the night in excruciating pain without a clue as to why. The next day, a CT scan reveals a grade II splenic laceration which you missed.",
-    "This patient's FAST exam is positive in the left upper quadrant. You take the patient for a CT scan, which reveals a grade II splenic laceration. Patient is admitted overnight.",
-    "This patient's FAST exam is positive in the left upper quadrant. Patient is rushed to the operating room for an exploratory laparotomy, which finds no evidence of damage. Patient is discharged home with a scar and a story to remember you by.",
-    "This patient's FAST exam is positive in the left upper quadrant. You perform a needle thoracostomy and place a chest tube in the patient's left chest which does not put out any fluid. A colleague suggests sending the patient for a CT scan, which ultimately reveals a grade II splenic laceration. Patient is admitted overnight with a new story to tell his wife, a malpractice attorney.");
+
 
 //success or fail message
+/*
 if (actionChoice === "CT Scan") {
-    document.getElementById("result").innerText = ("Success!")
+    document.getElementById("result").innerText = ("Success!!") //!! to test js fxn
 }
-else {document.getElementById("result").innerText = ("Uh Oh!");
-}
-
-
-if (actionChoice === "Observation") {
-document.getElementById("explanation").innerText = (case1Outcomes.outcomeObs);}
-
-if (actionChoice === "CT Scan") {
-    document.getElementById("explanation").innerText = (case1Outcomes.outcomeCT);}
-if (actionChoice === "Surgery") {
-    document.getElementById("explanation").innerText = (case1Outcomes.outcomeSurg);}
-if (actionChoice === "Intervention") {
-    document.getElementById("explanation").innerText = (case1Outcomes.outcomeInt);}
-    */
-
-    /*
-
-function switchLUQ() {
-    newLocation = "Left Upper Quadrant";
-    document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case2/luq-nl-c2.gif";
-    viewedLUQ = true;
-    showActions();
-}
-
-function switchRUQ() {
-    newLocation = "Right Upper Quadrant";
-    document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case2/ruq-nl-3.gif";
-    viewedRUQ = true;
-    showActions();
-}
-
-function switchSubxi() {
-    newLocation = "Subxiphoid";
-    document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case2/subxi-nl-c2.gif";
-    viewedSubxi = true;
-    showActions();
-}
-
-function switchBladder() {
-    newLocation = "Pelvic";
-    document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case2/bladder-nl-f-c2.gif";
-    viewedBladder = true;
-    showActions();
-}
-
-function switchLungr() {
-    newLocation = "Lung (R)";
-    document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case2/nl-lung-1-c2-R.gif";
-    viewedLungR = true;
-    showActions();
-}
-
-function switchLungl() {
-    newLocation = "Lung (L)";
-    document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case2/nl-lung-2-c2-L.gif";
-    viewedLungL = true;
-    showActions();
-}
-
-
-//click listener for location buttons
-var header = document.getElementById("locationIcons");
-var btns = header.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function() {
-        var current = document.getElementsByClassName("active");
-        if (current.length > 0) {
-            current[0].className = current[0].className.replace(" active", "");
-        }
-        this.className += " active";
-    });
+else {document.getElementById("result").innerText = ("Uh Oh!!");
 }
 */
+
+//display outcomes on outcome pages
+//if i give outcomes their own js page, how will the ultimate outcome be recorded? 

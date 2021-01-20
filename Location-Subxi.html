@@ -1,52 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<link rel="stylesheet" href="AlbatrossStyle.css">
-<div class="grid-container">
-    <div class="Tabs">
-        <a href="Location-RUQ.html">Right Upper Quadrant</a> | <a href="Location-LUQ.html">Left Upper Quadrant</a> | <a href="Location-Subxi.html">Subxiphoid</a> | <a href="Location-LUQ.html">Bladder</a> | <a href="Location-Lung.html">Lungs</a>
-    </div>
-    <div class="Navigation">
-        <a href="ShiftReview.html">Back to Shift Review</a> |
-        <a href="Progress%20Report.html">Progress Report
-        </a>
-    </div>
+<link rel="stylesheet" href="LocationStyle.css">
+<div class="header">
 
-
-    <div class="Normal-Anatomy">
-        <h2>
-            Normal Anatomy
-        </h2>
-        <img src="http://drive.google.com/uc?export=view&id=1LKJ2m68JJblhJ6naNRnypGVkoplznzjQ" id="normalUS" class="ultrasound">
-    </div>
-    <div class="Positive-Fast">
-        <h2>
-            Pericardial Effusion
-        </h2>
-        <img src="http://drive.google.com/uc?export=view&id=1A3rsweZW-66QTrKfx2aVzsZp3t3532me" id="posUS" class="ultrasound">
-    </div>
-    <div class="Body">
-        <div class="parent">
-            <img src="http://drive.google.com/uc?export=view&id=1K1HOA7fwUs_QaC4rCxgXKKPdjYCZ_Lv9" id="body">
-            <div class="locations">
-                <a href="Location-RUQ.html"> <img id="ruqicon" src="http://drive.google.com/uc?export=view&id=1npaApAJXuHfPUXFkmzk7qwD-oaw895go"></a>
-                <a href="Location-LUQ.html"> <img id="luqicon" src="http://drive.google.com/uc?export=view&id=1npaApAJXuHfPUXFkmzk7qwD-oaw895go"></a>
-                <a href="Location-Subxi.html"> <img id="subxicon" src="http://drive.google.com/uc?export=view&id=1npaApAJXuHfPUXFkmzk7qwD-oaw895go"></a>
-                <a href="Location-Bladder.html"> <img id="bladdericon" src="http://drive.google.com/uc?export=view&id=1npaApAJXuHfPUXFkmzk7qwD-oaw895go"></a>
-                <a href="Location-Lung.html"> <img id="rLungicon" src="http://drive.google.com/uc?export=view&id=1npaApAJXuHfPUXFkmzk7qwD-oaw895go"></a>
-                <a href="Location-Lung.html">  <img id="lLungicon" src="http://drive.google.com/uc?export=view&id=1npaApAJXuHfPUXFkmzk7qwD-oaw895go"></a>
-            </div>
+    <br>
+    <div class="grid1">
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Locations</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="Location-RUQ.html">Right Upper Quadrant</a>
+          <a href="Location-LUQ.html">Left Upper Quadrant</a>
+          <a href="Location-Subxi.html">Subxiphoid</a>
+          <a href="Location-Bladder.html">Bladder</a>
+          <a href="Location-Lung.html">Lungs</a>
         </div>
-
+      </div>
+      <div class="button_cont">
+        <a class="example_a" href="Progress%20Report.html">Progress Report</a></div>
+      <div class="button_cont">
+        <a class="example_a" href="ShiftReview.html">Shift Review</a></div>
+  
+  
+  
     </div>
-    <div class="Probe-Location">
-        <h2>
-            Probe Control
-        </h2>
-        <p>
-            With the probe parallel to the patient's sternum, fan the probe back and forth, viewing the heart and looking for free fluid
-        </p>
-    </div>
-    <div class="Current-Location">
-        <h1 id="currentLocation">Subxiphoid</h1>
-    </div>
+  </div>
+  
+  <div class="body">
+    <h1> Subxiphoid </h1> <br>
+  </div>
+  <div class="article">
+    <h2>
+      Normal Anatomy
+    </h2>
+    <img src="Case1/subxi-nl-1.gif" id="normalUS" class="ultrasound">
+  
+    <h2>
+      Positive FAST
+    </h2>
+    <img src="Case4/subxi-pos-c4.gif" id="posUS" class="ultrasound">
 </div>
+  
+  <div class="aside">
+    <h2>
+      Probe Control
+    </h2>
+    <p>
+        With the probe parallel to the patient's sternum, fan the probe back and forth, viewing the heart and looking for free fluid
+    </p>
+  </div>
+  
+  </div>
+<script src="Locationjs.js"></script>

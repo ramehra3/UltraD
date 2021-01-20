@@ -1,64 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="ProgressReportStyle.css">
+  <link rel="stylesheet" href="PRStyle.css">
 
-<div class="ProgressReportBox">
-    <div class="Title"> <h1>
-        Progress Report
-    </h1></div>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
 
+  <div class="ProgressReportBox">
 
-<div class="ScoreData">
-    <h3 id = "OverallAccuracy">
-        Overall accuracy: 93%
-    </h3>
-    <h3 id ="AverageScore">
-        Average Score: 673/ 700
-    </h3>
-    <h3 id ="CasesCompleted">
-        Cases completed: 44
-    </h3>
-</div>
-
-    <div class="ActionBreakdown">
-        <h3 id="byAction">           By Action        </h3>
-        <h4 id= "Observation"><a href="ActionInfo-Obs.html">Observation:</a> 98%</h4><!--add icons here-->
-        <h4 id ="CTScan"><a href="ActionInfo-CT.html">CT Scan:</a> 73%</h4><!--add icons here-->
-        <h4 id ="Surgery"><a href="ActionInfo-Surgery.html">Surgery:</a> 96%</h4><!--add icons here-->
-        <h4 id ="Intervention"><a href="ActionInfo-Intervene.html">Intervention:</a> 80% </h4> <!--add icons here-->
+    <div class="Logo">
+      <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/s23fed97fdd82c008/image/id3ac249f26752511/version/1567494251/image.png">
     </div>
 
+    <div class="Title">
+      <h1>Progress Report</h1>
+    </div>
 
-    <div class="LocationBreakdown"><h3 id="byLocation">By Location</h3>
-        <div class="parent">
-            <img src="http://drive.google.com/uc?export=view&id=1K1HOA7fwUs_QaC4rCxgXKKPdjYCZ_Lv9" id="body">
-            <div class="locations">
-                <a href="Location-RUQ.html"> <img id="ruqicon" src="http://drive.google.com/uc?export=view&id=1npaApAJXuHfPUXFkmzk7qwD-oaw895go"></a>
-                <a href="Location-LUQ.html"> <img id="luqicon" src="http://drive.google.com/uc?export=view&id=1npaApAJXuHfPUXFkmzk7qwD-oaw895go"></a>
-                <a href="Location-Subxi.html"> <img id="subxicon" src="http://drive.google.com/uc?export=view&id=1npaApAJXuHfPUXFkmzk7qwD-oaw895go"></a>
-                <a href="Location-Bladder.html"> <img id="bladdericon" src="http://drive.google.com/uc?export=view&id=1npaApAJXuHfPUXFkmzk7qwD-oaw895go"></a>
-                <a href="Location-Lung.html"> <img id="rLungicon" src="http://drive.google.com/uc?export=view&id=1npaApAJXuHfPUXFkmzk7qwD-oaw895go"></a>
-                <a href="Location-Lung.html">  <img id="lLungicon" src="http://drive.google.com/uc?export=view&id=1npaApAJXuHfPUXFkmzk7qwD-oaw895go"></a>
-            </div>
-        </div></div>
+    <div class="ScoreData">
+      <h3>Overall Accuracy: <b>93%</b></h3>
+      <h3>Average Score: <b>673/700</b></h3>
+      <h3>Cases Completed: <b>44</b></h3>
+    </div>
 
     <div class="MostMissed">
-        <h4 id= "MostMissedAction">
-            Most missed action: <a href="ActionInfo-CT.html">CT Scan</a> </h4>
-        <div class="WorstLocation">
-            <h4 id="WorstLocation">
-                Location of most missed actions: <a href="Location-RUQ.html">Right Upper Quadrant</a>
-            </h4>
+      <h4 id="MostMissedAction">
+        Most Missed Action: <a href="ActionInfo-CT.html"><b>CT Scan</b></a></h4>
+      <div class="WorstLocation">
+        <h4 id="WorstLocation">
+          Location Of Most Missed Actions: <br><br> <a href="Location-RUQ.html"><b>Right Upper Quadrant</b></a>
+        </h4>
+      </div>
     </div>
-</div>
+
+    <div class="Category">
+      <h2>Test Category</h2>
+      <h3><a href="ActionInfo-Obs.html">Observation</a>:</h3>
+      <h3><a href="ActionInfo-CT.html">CT Scan</a>:</h3>
+      <h3><a href="ActionInfo-Surgery.html">Surgery</a>:</h3>
+      <h3><a href="ActionInfo-Intervene.html">Intervention</a>:</h3>
+    </div>
+
+    <div class="ActionBreakdown">
+      <h2>Your Scores</h2>
+      <h3>98%</h3>
+      <h3>73%</h3>
+      <h3>96%</h3>
+      <h3>80%</h3>
+    </div>
+
+    <div class="ClassAverage">
+      <h2>Class Average</h2>
+      <h3>84%</h3>
+      <h3>81%</h3>
+      <h3>83%</h3>
+      <h3>82%</h3>
+    </div>
+
+    <div class="LocationBreakdown">
+      <div class="parent">
+        <img src="http://drive.google.com/uc?export=view&id=1K1HOA7fwUs_QaC4rCxgXKKPdjYCZ_Lv9" id="body">
+        <div class="locations">
+          <a href="Location-RUQ.html"> <img id="ruqicon" title="Testing" src="http://drive.google.com/uc?export=view&id=1npaApAJXuHfPUXFkmzk7qwD-oaw895go"></a>
+          <a href="Location-LUQ.html"> <img id="luqicon" src="http://drive.google.com/uc?export=view&id=1npaApAJXuHfPUXFkmzk7qwD-oaw895go"></a>
+          <a href="Location-Subxi.html"> <img id="subxicon" src="http://drive.google.com/uc?export=view&id=1npaApAJXuHfPUXFkmzk7qwD-oaw895go"></a>
+          <a href="Location-Bladder.html"> <img id="bladdericon" src="http://drive.google.com/uc?export=view&id=1npaApAJXuHfPUXFkmzk7qwD-oaw895go"></a>
+          <a href="Location-Lung.html"> <img id="rLungicon" src="http://drive.google.com/uc?export=view&id=1npaApAJXuHfPUXFkmzk7qwD-oaw895go"></a>
+          <a href="Location-Lung.html"> <img id="lLungicon" src="http://drive.google.com/uc?export=view&id=1npaApAJXuHfPUXFkmzk7qwD-oaw895go"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="LocationReveal">
+      <h2>Exam Image</h2>
+      <div class="XRayImages">
+        <img id="RightLungImage" src="Case2/nl-lung-2-c2-R.gif">
+        <img id="LeftLungImage" src="Case2/nl-lung-1-c2-L.gif">
+        <img id="SubXImage" src="Case1/subxi-nl-1.gif">
+        <img id="RUQImage" src="https://images.squarespace-cdn.com/content/v1/58118909e3df282037abfad7/1507764829491-PDTO9VHHH83GTZFGJCN5/ke17ZwdGBToddI8pDm48kJbosy0LGK_KqcAZRQ_Qph1Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpzkC6kmM1CbNgeHQVxASNv0wiXikHv274BIFe4LR7nd1rKmAka4uxYMJ9FupazBoaU/bowra+neg+fast+ruq.gif?format=1500w">
+        <img id="LUQImage" src="Case2/luq-nl-c2.gif">
+        <img id="BladderImage" src="Case1/bladder-nl.gif">
+      </div>
+    </div>
 
     <div class="Navigation">
-        <div class="Review-Set">
-            <a href=ShiftReview.html>Review Shift</a>
-        </div>
-
-        <div class="NewShift">
-
-            <button><a href=Case%20Details.html class="NewShiftButton">Begin New Shift</a></button>
-        </div>
+      <a href=ShiftReview.html class="ShiftButton">Review Shift</a>
+      <a href=Case%20Details.html class="ShiftButton">New Shift</a></button>
     </div>
+
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="Progress.js"></script>
+</html>
