@@ -1,0 +1,149 @@
+/* CSS FONTS
+font-family: 'Arvo';
+font-family: 'Lato', sans-serif;*/
+
+/* CSS HEX */
+:root {
+    --baby-blue: #e6fafcff;
+    --polished-pine: #519e8aff;
+    --black: #000000ff;
+    --carolina-blue: #009ffdff;
+    --melon: #fcb9b2ff;
+  }
+  
+  /* GRID LAYOUT */
+  .grid {
+    display: grid;
+    grid-template-columns: 50px minmax(200px, 40%) auto 50px;
+    grid-template-rows: 20px minmax(200px, auto) 10% 10% 80px;
+    grid-gap: 0.5em;
+  }
+  
+  /* Display spacers For visual purposes
+  .spacer {
+    background-color: grey;
+  }*/
+  
+  #topBar {
+    grid-column-start: 1;
+    grid-column-end: 5;
+  }
+  
+  #homePageImage {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 5;
+  
+  }
+  
+  #loginWindow {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    text-align: center;
+  }
+  
+  #forgotPassword {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+  
+  #signUp {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }
+  
+  #leftSidebar {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 5;
+  }
+  
+  #rightSidebar {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 5;
+  }
+  
+  #bottomBar {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    display: block;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  /* STYLING */
+  body > * {
+    font-family: 'Arvo';
+    font-size: 14px;
+  }
+  
+  input {
+      font-family: 'Arvo';
+      font-size: 14px;
+  }
+  
+  .grid > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .item {
+    height: 100%;
+    background-color: var(--baby-blue);
+    border-color: var(--carolina-blue);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 1rem;
+  }
+  
+  #homePageImage img {
+    vertical-align: middle;
+    width: 100%;
+  }
+  
+  #title {
+    font-size: 2rem;
+    color: var(--carolina-blue);
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+  }
+  
+  #loginWindow input[type=submit] {
+    width: 10rem;
+    border-radius: 3px;
+    background-color: var(--carolina-blue);
+  }
+  
+  #loginWindow input[type=submit]:hover {
+    background-color: var(--polished-pine);
+  }
+  
+  #forgotPasswordButton, #signUpButton {
+    color: var(--carolina-blue);
+  }
+  
+  #forgotPasswordButton:hover, #signUpButton:hover {
+    color: var(--polished-pine);
+  }
+  
+  #forgotPasswordForm, #signUpForm {
+    display: none;
+  }
+  
+  #bottomBar span {
+    padding: 2%;
+    color: var(--carolina-blue);
+    font-size: 10px;
+  }
+  

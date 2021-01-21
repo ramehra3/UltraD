@@ -23,12 +23,8 @@
 }
 
 .Remember { grid-area: Remember;
-    border:solid;
-    border-radius:5px;
     margin: 1vw;
-    border-width:thick;
-    border-color:purple;
-}
+    }
 .Key { grid-area: Key;}
 
 .Navigation {

@@ -1,0 +1,214 @@
+.ui-tooltip {
+    position: absolute;
+    background: #f9a235;
+    color: #fff;
+    padding: 6px 0px;
+    border-radius: 25px;
+}
+
+b {
+ font-weight: 900;
+}
+
+.ProgressReportBox {
+ display: grid;
+ grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr;
+ gap: 15px 15px;
+ grid-template-areas:
+   "Logo Logo Logo Logo Logo Logo"
+   "Title Title Title Title Title Title"
+   "ScoreData ScoreData ScoreData MostMissed MostMissed MostMissed"
+   "Category ActionBreakdown ClassAverage LocationBreakdown LocationReveal LocationReveal"
+   "Category ActionBreakdown ClassAverage LocationBreakdown LocationReveal LocationReveal"
+   "Navigation Navigation Navigation Navigation Navigation Navigation";
+ padding: 5vw 5vw 5vw 5vw;
+}
+
+.Logo {
+   grid-area: Logo;
+}
+
+.Logo img {
+ width: 50%;
+ height: auto;
+ margin-left: 25%;
+ margin-right: 25%;
+}
+
+.Title {
+ grid-area: Title;
+ text-align: center;
+ font-size: 3.5vw;
+ color: #E57200;
+ font-family: 'Libre Franklin', sans-serif;
+ font-weight: 150;
+ background-color: #232D4B;
+}
+
+.ScoreData {
+ grid-area: ScoreData;
+ background-color: rgba(229,114,0,1);
+ color: rgba(35,45,75,1);
+ border-color: rgba(35,45,75,1);
+ border: solid;
+ border-radius: 2vw;
+ text-align: center;
+ font-size: 2vw;
+ font-family: "Libre Franklin", sans-serif;
+}
+
+.MostMissed {
+ grid-area: MostMissed;
+ background-color: rgba(229,114,0,1);
+ color: rgba(35,45,75,1);
+ border-color: rgba(35,45,75,1);
+ border: solid;
+ border-radius: 2vw;
+ text-align: center;
+ font-size: 2vw;
+ font-family: "Libre Franklin", sans-serif;
+}
+
+.Category {
+ grid-area: Category;
+ font-size: 2vw;
+ font-family: "Lora", sans-serif;
+ text-align: center;
+}
+
+.ActionBreakdown {
+ grid-area: ActionBreakdown;
+ font-size: 2vw;
+ font-family: "Lora", sans-serif; 
+ text-align: center;
+}
+
+.ClassAverage {
+ grid-area: ClassAverage;
+ font-size: 2vw;
+ font-family: "Lora", sans-serif; 
+ text-align: center;
+}
+
+.LocationBreakdown {
+ grid-area: LocationBreakdown;
+ text-align: center;
+ font-size: 2vw;
+ font-family: "Lora", sans-serif;
+}
+
+.LocationReveal {
+ grid-area: LocationReveal;
+ text-align: center;
+ font-size: 2vw;
+ font-family: "Libre Franklin", sans-serif;
+}
+
+.Navigation {
+ grid-area: Navigation;
+}
+
+#byLocation {
+ text-align: center;
+}
+
+
+#body {
+ height: 20vw;
+ padding: 1vw;
+ position: absolute;
+}
+
+.parent {
+ width: 1px;
+ height: 1px;
+ position: absolute;
+ z-index: 0;
+}
+
+.inner {}
+
+#ruqicon {
+ position: absolute;
+ z-index: 1;
+ bottom: -16vw;
+ right: -7.5vw;
+ height: 2vw;
+}
+
+#luqicon {
+ position: absolute;
+ z-index: 1;
+ bottom: -16vw;
+ right: -12vw;
+ height: 2vw;
+}
+
+#subxicon {
+ position: absolute;
+ z-index: 1;
+ bottom: -14vw;
+ right: -9.75vw;
+ height: 2vw;
+}
+
+#bladdericon {
+ position: absolute;
+ z-index: 1;
+ bottom: -19vw;
+ right: -9.75vw;
+ height: 2vw;
+}
+
+#rLungicon {
+ position: absolute;
+ z-index: 1;
+ bottom: -12vw;
+ right: -7.5vw;
+ height: 2vw;
+}
+
+#lLungicon {
+ position: absolute;
+ z-index: 1;
+ bottom: -12vw;
+ right: -12vw;
+ height: 2vw;
+}
+
+.LocationReveal img {
+ grid-area: LocationReveal;
+ Width: 12vw;
+ Height: Auto;
+ position: static;
+}
+
+.ShiftButton {
+ box-shadow: inset 0px 1px 0px 0px #ffffff;
+ background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+ background-color: #ffffff;
+ border-radius: 6px;
+ border: 1px solid #dcdcdc;
+ display: inline-block;
+ cursor: pointer;
+ color: #666666;
+ font-family: Lora;
+ font-size: 2vw;
+ font-weight: bold;
+ padding: 6px 24px;
+ text-decoration: none;
+ text-shadow: 0px 1px 0px #ffffff;
+ position: relative;
+ margin: auto;
+ width: 40%;
+}
+
+.ShiftButton:hover {
+ background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+ background-color: #f6f6f6;
+}
+
+.ShiftButton:active {
+ position: relative;
+ top: 1px;
+ }
