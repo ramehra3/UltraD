@@ -1,16 +1,16 @@
 .home {
     border-style: dotted;
-    font-family: Alegreya;
+    font-family: Consolas;
     font-style: normal;
     font-weight: normal;
     font-size: 6vw;
     text-align: center;
-    color: #FF0000;
+    color: #FF3500;
     background-color:#282b2b;
     margin-top:0vw;
 }
 
-
+html {background-color:#282b2b}
 
 #logo {
     width: 15vw;
@@ -42,8 +42,8 @@
 
 .UI-container {
     display: grid;
-    grid-template-columns: 8vw 10vw 14.285vw 14.285vw 14.285vw 24.285vw 10vw;
-    grid-template-rows: 3.5vw 10vw 10vw 10vw 5vw 2vw 2vw 8vw;
+    grid-template-columns: 8vw 10vw 14vw 14vw 14vw 27vw 10vw;
+    grid-template-rows: 3.5vw 10vw 10vw 10vw 5vw 3vw 4vw 8vw;
     gap: 1px 1px;
     grid-template-areas:
     "Help . Location Location Location Location time"
@@ -134,43 +134,49 @@
     padding-top:0;
     text-align:center;
     font-size: 2.7vw;
+    font-family: Consolas;
+    color:#FCFDC2
 }
 .Actions { grid-area: Actions;
     border:solid;
     border-radius: 1vw;
     font-size:1.5vw;
     text-align:center;
+    font-family: Consolas;
 }
 .Actions>h3 {
     font-size:1.7vw;
     margin-bottom:0;
+    font-family: Consolas;
+    color:#FCFDC2;
 }
 
 .actionButton {
     height:5.3vw;
     text-align:center;
-    display: inline-block;
-    color: white;
-    border-radius:3vw
+    display: inline-block;    
+    border-radius:3vw;
 }
 #obsButton,#ctButton,#surgeryButton,#interveneButton {
     width:9vw;
+    font-family: Consolas;
+    font-size: 1vw;
 }
 
 #obsButton {
-    background-color:springgreen;
+    background-color:#9CE5A3;
 }
 
 #ctButton {
-    background-color:deepskyblue;
+    background-color:#31BBF6;
 }
 
 #surgeryButton {
-    background-color:red;
+    background-color:#FF0000;
 }
 
 #interveneButton {
-    background-color:orange;
+    background-color:#F6B331;
 }
 
 
@@ -194,31 +200,45 @@
     margin-left:3vw;
     padding-left:3vw;
     font-size:2.5vw;
+    background-color: rgba(156, 229, 165, 0.15);
 }
 .Vital-Signs { grid-area: Vital-Signs;
     font-size:1.5vw;
+    font-family: Consolas;
 }
 .Vital-Signs>h3 {
     text-align:center;
     margin-top:0px;
     padding-top:0px;
+    color:#FCFDC2;
 }
-.BP,.HR,.T,.O2 {font-size:1.4vw;}
+.BP,.HR,.T,.O2 {
+    font-size:1.4vw;
+    font-family: monaco, Consolas, "Lucida Console";
+    color:#eff0e2
+}
+
 .BP { grid-area: BP;}
 .HR { grid-area: HR;}
 .T { grid-area: T;}
 .O2 { grid-area: O2;}
-.Case-Details { grid-area: Case-Details;
+.Case-Details { 
+    grid-area: Case-Details;
+    border:solid;
+    border-radius:1vw;
 }
 .Case-Details>h3 {
     text-align:center;
     margin-top:3px;
+    margin-bottom: auto;
+    font-family: Consolas;
+    color:#FCFDC2;
 }
 .Case-Details>p {
     font-size: 1.5vw;
     padding: 0 1vw 0 1vw;
-    border:solid;
-    border-radius:1vw;
+    font-family: Consolas;
+    color:#eff0e2;
 }
 .time { grid-area: time; }
 
