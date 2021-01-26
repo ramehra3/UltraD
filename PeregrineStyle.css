@@ -183,24 +183,18 @@ html {background-color:#282b2b}
 
 
 .Vitals {
-    display: grid;
-    grid-template-columns: 40% 40%;
-    grid-template-rows: 3vw 3vw 3vw;
-    gap: 1px 1px;
-    grid-template-areas:
-    "Vital-Signs Vital-Signs"
-    "BP HR"
-    "T O2";
     grid-area: Vitals;
     border:solid;
     border-radius:1vw;
+    border-color:black;
     margin-top:0px;
-    padding-top:0px;
+    padding-top:5px;
     align-content:center;
     margin-left:3vw;
     padding-left:3vw;
     font-size:2.5vw;
     background-color: rgba(156, 229, 165, 0.15);
+    color:#ffffff;
 }
 .Vital-Signs { grid-area: Vital-Signs;
     font-size:1.5vw;
@@ -240,7 +234,10 @@ html {background-color:#282b2b}
     font-family: Consolas;
     color:#eff0e2;
 }
-.time { grid-area: time; }
+.time {
+    grid-area: time; 
+    color:#eff0e2;
+    }
 
 .active, .btn:hover {
     background-color: #1e6cdc;

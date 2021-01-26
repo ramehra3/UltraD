@@ -4,15 +4,16 @@ $(document).ready(function() {
   $.ajax({
     url: JSONFEED,
     success: function(data) {
-      readData(data);
+      var x = Math.floor((Math.random() * 10) + 1);
+      readData(data, x);
     }
   });
 });
 
-function readData(data) {
+function readData(data, x) {
   var partfeed = data.feed.entry;
   var divData = [];
-  for (var i = 0; i < 2; i++) {
+  for (var i = 0; i < partfeed.length; i++) {
     var JSONrow = partfeed[i].content.$t.split(',');
     var row = [];
     // console.log('the Current Case Data is: ' + JSONrow);
@@ -23,15 +24,13 @@ function readData(data) {
       row[j] = val;
     }
     //trying to pull just row for the heck of it
-    if (i != 0) {
-    	scenario = row[1];
-      //console.log(thehistory);
-      drawDiv(row, scenario, "#caseDetails");
+    if (i == x) {
+      drawDiv(row, "#caseDetails");
     }
   }
 }
 
-function drawDiv(divData, scenario, parent) {
+function drawDiv(divData, parent) {
   if (divData == null) return null;
 
   //caseid = $.trim(divData[0]);
@@ -72,7 +71,7 @@ function drawDiv(divData, scenario, parent) {
   var $vitalsDiv = $("<div/>");
   $vitalsDiv.addClass('Vitals');
   var vitals = $("<p></p>").html("Vital Signs:" + " <br>T: " + tempc + "&degC / " + tempf + "&degF" + " <br> BP: " + bpsys + "/" + bpdia + " <br> HR: " + hr + "<br>SpO2: " + oxy);
-  $caseDiv.append(vitals);
+  $caseDiv.prepend(vitals);
   $('#vital-signs').append($vitalsDiv);
   
   }

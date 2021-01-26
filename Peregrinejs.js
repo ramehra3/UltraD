@@ -1,48 +1,68 @@
-class CaseData {
-    constructor(age,gender,scenario,bpsys,bpdia,hr,tempc,oxy)
-        {this.age = age;
-        this.gender = gender;
-        this.scenario = scenario;
-        this.bpsys = bpsys;
-        this.bpdia = bpdia;
-        this.hr = hr;
-        this.tempc = tempc;
-        this.oxy = oxy;}
-}
+var JSONFEED = 'https://spreadsheets.google.com/feeds/list/1dpcguZ2Ak0zc0Sh1WoPV0c0tXVxre3yGWC1Wo5ElWtc/1/public/basic?alt=json';
 
-let case1 = new CaseData(37, //age
-    "male", //gender
-    "presents after an MVC in which he was a restrained driver. GCS 14. Complains of diffuse discomfort, with multiple large contusions on his chest, abdomen, and legs.",
-    113, //bpsys
-    76, //bpdia
-    89, //hr
-    36.0, //tcelcius
-    94); //o2
-
-class caseOutcomes {
-    constructor(outcomeObs, outcomeCT, outcomeSurg, outcomeInt) {
-        this.outcomeObs = outcomeObs;
-        this.outcomeCT = outcomeCT;
-        this.outcomeSurg = outcomeSurg;
-        this.outcomeInt = outcomeInt;
+$(document).ready(function() {
+  $.ajax({
+    url: JSONFEED,
+    success: function(data) {
+      readData(data);
     }
+  });
+});
+
+function readData(data) {
+  var partfeed = data.feed.entry;
+  var divData = [];
+  for (var i = 0; i < 2; i++) {
+    var JSONrow = partfeed[i].content.$t.split(',');
+    var row = [];
+  for (var j = 0; j < JSONrow.length; j++) {
+      val = JSONrow[j].split(':')[1];
+      row[j] = val;
+    }
+    if (i != 0) {
+    	scenario = row[1];
+      drawCase(row, scenario, "#caseDetails");
+      drawVitals(row, scenario, "#vitals");
+    }
+  }
 }
-    
-let case1Outcomes = new caseOutcomes(
-    "This patient's FAST exam is positive in the left upper quadrant. Patient is admitted overnight for further observation, and spends the night in excruciating pain without a clue as to why. The next day, a CT scan reveals a grade II splenic laceration which you missed.",
-    "This patient's FAST exam is positive in the left upper quadrant. You take the patient for a CT scan, which reveals a grade II splenic laceration. Patient is admitted overnight.",
-    "This patient's FAST exam is positive in the left upper quadrant. Patient is rushed to the operating room for an exploratory laparotomy, which finds no evidence of damage. Patient is discharged home with a scar and a story to remember you by.",
-    "This patient's FAST exam is positive in the left upper quadrant. You perform a needle thoracostomy and place a chest tube in the patient's left chest which does not put out any fluid. A colleague suggests sending the patient for a CT scan, which ultimately reveals a grade II splenic laceration. Patient is admitted overnight with a new story to tell his wife, a malpractice attorney."
-    );
-    
 
-document.getElementById("caseDetails").innerHTML =
-    ("A " + case1.age + "-year-old " + case1.gender + " " + case1.scenario);
-document.getElementById("BP").innerHTML =("BP: " + case1.bpsys + "/" + case1.bpdia);
-document.getElementById("HR").innerHTML =("HR: " + case1.hr);
-document.getElementById("T").innerHTML =("T: " + case1.tempc +"&degC"); //fix degree symbol//
-document.getElementById("O2").innerHTML =("spO2: " + case1.oxy +"%");
+function drawCase(divData, scenario) {
+  if (divData == null) return null;
 
+  title = $.trim(divData[1]);
+  age = $.trim(divData[2]);
+  gender = $.trim(divData[3]);
+  
+
+
+  var $caseDiv = $("<div/>");  
+  var casedetails = $("<p></p>").html("A " + age + "-year-old " + gender + scenario); 
+  $caseDiv.prepend(casedetails);
+  $('#caseDetails').append($caseDiv);
+  }
+
+function drawVitals (divData) {
+    tempc = $.trim(divData[4]);
+    tempf = $.trim(divData[5]);
+    //console.log("Temperature is"+tempf); values pull fine
+    bpsys = $.trim(divData[6]);
+    bpdia = $.trim(divData[7]);
+    hr = $.trim(divData[8]);
+    oxy = $.trim(divData[9]);
+
+    var $vitalsDiv = $("<div/>");
+    var vitals = $("<p></p>").html("T: " + tempc + "&degC / " + tempf + "&degF" + " <br> BP: " + bpsys + "/" + bpdia + " <br> HR: " + hr + "<br>SpO2: " + oxy);
+    $vitalsDiv.prepend(vitals);
+    $('#vitals').append($vitalsDiv);
+  }
+
+  /*
+  outcomeObs = $.trim(divData[10]);
+  outcomeCT = $.trim(divData[11]);
+  outcomeSurg = $.trim(divData[12]);
+  outcomeInt = $.trim(divData[13]);
+*/
 
 viewedRUQ = false;
 viewedLUQ = false;
