@@ -1,49 +1,3 @@
-class CaseData {
-    constructor(age,gender,scenario,bpsys,bpdia,hr,tempc,oxy)
-        {this.age = age;
-        this.gender = gender;
-        this.scenario = scenario;
-        this.bpsys = bpsys;
-        this.bpdia = bpdia;
-        this.hr = hr;
-        this.tempc = tempc;
-        this.oxy = oxy;}
-}
-
-let case1 = new CaseData(37, //age
-    "male", //gender
-    "presents after an MVC in which he was a restrained driver. GCS 14. Complains of diffuse discomfort, with multiple large contusions on his chest, abdomen, and legs.",
-    113, //bpsys
-    76, //bpdia
-    89, //hr
-    36.0, //tcelcius
-    94); //o2
-
-class caseOutcomes {
-    constructor(outcomeObs, outcomeCT, outcomeSurg, outcomeInt) {
-        this.outcomeObs = outcomeObs;
-        this.outcomeCT = outcomeCT;
-        this.outcomeSurg = outcomeSurg;
-        this.outcomeInt = outcomeInt;
-    }
-}
-    
-let case1Outcomes = new caseOutcomes(
-    "This patient's FAST exam is positive in the left upper quadrant. Patient is admitted overnight for further observation, and spends the night in excruciating pain without a clue as to why. The next day, a CT scan reveals a grade II splenic laceration which you missed.",
-    "This patient's FAST exam is positive in the left upper quadrant. You take the patient for a CT scan, which reveals a grade II splenic laceration. Patient is admitted overnight.",
-    "This patient's FAST exam is positive in the left upper quadrant. Patient is rushed to the operating room for an exploratory laparotomy, which finds no evidence of damage. Patient is discharged home with a scar and a story to remember you by.",
-    "This patient's FAST exam is positive in the left upper quadrant. You perform a needle thoracostomy and place a chest tube in the patient's left chest which does not put out any fluid. A colleague suggests sending the patient for a CT scan, which ultimately reveals a grade II splenic laceration. Patient is admitted overnight with a new story to tell his wife, a malpractice attorney."
-    );
-    
-
-/*document.getElementById("caseDetails").innerHTML =
-    ("A " + case1.age + "-year-old " + case1.gender + " " + case1.scenario);
-document.getElementById("BP").innerHTML =("BP: " + case1.bpsys + "/" + case1.bpdia);
-document.getElementById("HR").innerHTML =("HR: " + case1.hr);
-document.getElementById("T").innerHTML =("T: " + case1.tempc +"&degC"); //fix degree symbol//
-document.getElementById("O2").innerHTML =("spO2: " + case1.oxy +"%");
-*/
-
 var JSONFEED = 'https://spreadsheets.google.com/feeds/list/1dpcguZ2Ak0zc0Sh1WoPV0c0tXVxre3yGWC1Wo5ElWtc/1/public/basic?alt=json';
 
 $(document).ready(function() {
@@ -92,7 +46,12 @@ function drawDiv(divData, thehistory, parent) {
   // outcomeCT = $.trim(divData[11]);
   // outcomeSurg = $.trim(divData[12]);
   // outcomeInt = $.trim(divData[13]);
-
+  ruqimg = $.trim(divData[14]);
+  luqimg = $.trim(divData[15]);
+  subximg = $.trim(divData[16]);
+  bladderimg = $.trim(divData[17]);
+  lungrimg = $.trim(divData[18]);
+  lunglimg = $.trim(divData[19]);
 
   var $caseDiv = $("<div/>");
   $caseDiv.addClass('Case-Details');  
@@ -102,9 +61,8 @@ function drawDiv(divData, thehistory, parent) {
   $('#BP').text('BP:' + bpsys  + '/' + bpdia);
   $('#HR').text('HR:' + hr);
   $('#T').text('T: '  + tempc +'\u00B0C' + '/' + tempf + '\u00b0F');
-  $('#O2').text('O2: ' + oxy);
-  
-  }
+  $('#O2').text('O2: ' + oxy);  
+}
 
 viewedRUQ = false;
 viewedLUQ = false;
@@ -116,7 +74,7 @@ viewedLungR = false;
 
 function showActions() {
     let x = document.getElementById("actionBox");
-    if (viewedRUQ,viewedLUQ,viewedSubxi,viewedBladder,viewedLungR, viewedLungL === true) {
+    if (viewedRUQ,viewedLUQ,viewedSubxi,viewedBladder,viewedLungR,viewedLungL === true) {
         x.style.display = "block";}
     else {x.style.display = "none";}
 }
@@ -134,7 +92,7 @@ setTimeout(function () {
 function switchLUQ() {
     newLocation = "Left Upper Quadrant";
     document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case1/luq-free-fluid.gif";
+    document.getElementById("activeWindow").src= ("http://drive.google.com/uc?export=view&id=" + luqimg);
     viewedLUQ = true;
     showActions();
 }
@@ -142,7 +100,7 @@ function switchLUQ() {
 function switchRUQ() {
     newLocation = "Right Upper Quadrant";
     document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case1/ruq-nl-2.gif";
+    document.getElementById("activeWindow").src= ("http://drive.google.com/uc?export=view&id=" + ruqimg);
     viewedRUQ = true;
     showActions();
 }
@@ -150,7 +108,7 @@ function switchRUQ() {
 function switchSubxi() {
     newLocation = "Subxiphoid";
     document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case1/subxi-nl-1.gif";
+    document.getElementById("activeWindow").src= ("http://drive.google.com/uc?export=view&id=" + subximg);
     viewedSubxi = true;
     showActions();
 }
@@ -158,7 +116,7 @@ function switchSubxi() {
 function switchBladder() {
     newLocation = "Pelvic";
     document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case1/bladder-nl.gif";
+    document.getElementById("activeWindow").src= ("http://drive.google.com/uc?export=view&id=" + bladderimg);
     viewedBladder = true;
     showActions();
 }
@@ -166,7 +124,7 @@ function switchBladder() {
 function switchLungr() {
     newLocation = "Lung (R)";
     document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case1/normal-lung-slide.gif";
+    document.getElementById("activeWindow").src= ("http://drive.google.com/uc?export=view&id=" + lungrimg);
     viewedLungR = true;
     showActions();
 }
@@ -174,7 +132,7 @@ function switchLungr() {
 function switchLungl() {
     newLocation = "Lung (L)";
     document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case1/normal-lung-slide.gif";
+    document.getElementById("activeWindow").src= ("http://drive.google.com/uc?export=view&id=" + lunglimg);
     viewedLungL = true;
     showActions();
 }
