@@ -13,8 +13,10 @@ function readData(data) {
   var partfeed = data.feed.entry;
   var divData = [];
   var length2 = Object.keys(partfeed).length-1;
-  //console.log(length2)
+  //console.log(length2);
+  
   var i = 0 + Math.floor(Math.random() * length2);
+  //console.log(i, ':i');
     var JSONrow = partfeed[i].content.$t.split(',');
     var row = [];
    // console.log('the Current Case Data is: ' + JSONrow);
@@ -96,6 +98,7 @@ let timer = setInterval(function () {
     document.getElementById("minutes").innerHTML = pad(parseInt(sec/60, 10));
 }, 1000);
 
+
 setTimeout(function () {
     clearInterval(timer);}, 999999);
 //to-do: record time at point of selection - save as variable
@@ -161,6 +164,10 @@ for (var i = 0; i < btns.length; i++) {
     });
 }
 
+
+function record_time(){
+  localStorage.minutes = document.getElementById("minutes").innerHTML;
+  localStorage.seconds = $('#seconds').html()}
 //Action Buttons Here
 function actionObs() {
     localStorage.case1Action = "Observation";//want to store this choice and reference it later (in Albo)
@@ -175,6 +182,7 @@ function actionCT() {
     localStorage.case1Action = "CT Scan";
     localStorage.case1Outcome = outcomeCT;
     console.log("Action: " + localStorage.case1Action);
+    record_time()
     window.location.href = "Outcome1.html";
 }
 
@@ -182,6 +190,7 @@ function actionSurg() {
     localStorage.case1Action = "Surgery";
     localStorage.case1Outcome = outcomeSurg;
     console.log("Action: " + localStorage.case1Action);
+    record_time()
     window.location.href = "Outcome1.html";
 }
 
@@ -189,6 +198,7 @@ function actionIntervene() {
     localStorage.case1Action = "Intervention";
     localStorage.case1Outcome = outcomeInt;
     console.log("Action: " + localStorage.case1Action);
+    record_time()
     window.location.href = "Outcome1.html";
 }
 

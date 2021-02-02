@@ -14,6 +14,9 @@ $('#case1KeyLoc').text(localStorage.case1KeyLoc);
 
 //If click shift review, clear local localStorage
 $("#new-shift").click(function() {
-  console.log('starting new shift, clearing storage')
+  console.log('starting new shift, clearing storage');
     localStorage.clear();
+    
+
   });
+  console.log(localStorage.minutes, localStorage.seconds);
