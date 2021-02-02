@@ -99,6 +99,11 @@ setTimeout(function () {
     clearInterval(timer);}, 999999);
 //to-do: record time at point of selection - save as variable
 
+function record_time(){
+  localStorage.minutes = document.getElementById("minutes").innerHTML;
+  localStorage.seconds = $('#seconds').html()
+}
+
 function switchLUQ() {
     newLocation = "Left Upper Quadrant";
     document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
