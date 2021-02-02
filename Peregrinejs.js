@@ -174,6 +174,7 @@ function actionObs() {
     localStorage.case1Outcome = outcomeObs;
     console.log("Action: " + localStorage.case1Action);
         //something about using cookies & enabling samesite -- error seen bc developing on client side. Might look different when deployed.
+    record_time();
     window.location.href = "Outcome1.html";
 }
 
