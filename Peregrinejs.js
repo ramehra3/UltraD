@@ -13,8 +13,10 @@ function readData(data) {
   var partfeed = data.feed.entry;
   var divData = [];
   var length2 = Object.keys(partfeed).length-1;
-  //console.log(length2)
+  //console.log(length2);
+  
   var i = 0 + Math.floor(Math.random() * length2);
+  //console.log(i, ':i');
     var JSONrow = partfeed[i].content.$t.split(',');
     var row = [];
    // console.log('the Current Case Data is: ' + JSONrow);
@@ -25,12 +27,12 @@ function readData(data) {
     	title = row[0];
     }
     }
-      drawDiv(row, title, "#caseDetails");
+    drawDiv(row, title, "#caseDetails");
     
   }
 
 
-function drawDiv(divData, thehistory, parent) {
+function drawDiv(divData, thehistory, parent, loc) {
   if (divData == null) return null;
 
   console.log("Case: " + title);
@@ -58,6 +60,8 @@ function drawDiv(divData, thehistory, parent) {
   keyImg = $.trim(divData[20]);
   localStorage.case1KeyImg = keyImg;
   keyLocation = $.trim(divData[21]);
+  localStorage.case1KeyLoc = keyLocation;
+  console.log(localStorage.case1KeyLoc);
   keyAction = $.trim(divData[22]);
   localStorage.case1KeyAction = keyAction;
   console.log("Key Action: " + localStorage.case1KeyAction);
@@ -93,6 +97,7 @@ let timer = setInterval(function () {
     document.getElementById("seconds").innerHTML = pad(++sec % 60);
     document.getElementById("minutes").innerHTML = pad(parseInt(sec/60, 10));
 }, 1000);
+
 
 setTimeout(function () {
     clearInterval(timer);}, 999999);
@@ -159,12 +164,17 @@ for (var i = 0; i < btns.length; i++) {
     });
 }
 
+
+function record_time(){
+  localStorage.minutes = document.getElementById("minutes").innerHTML;
+  localStorage.seconds = $('#seconds').html()}
 //Action Buttons Here
 function actionObs() {
     localStorage.case1Action = "Observation";//want to store this choice and reference it later (in Albo)
     localStorage.case1Outcome = outcomeObs;
     console.log("Action: " + localStorage.case1Action);
         //something about using cookies & enabling samesite -- error seen bc developing on client side. Might look different when deployed.
+    record_time();
     window.location.href = "Outcome1.html";
 }
 
@@ -173,6 +183,7 @@ function actionCT() {
     localStorage.case1Action = "CT Scan";
     localStorage.case1Outcome = outcomeCT;
     console.log("Action: " + localStorage.case1Action);
+    record_time()
     window.location.href = "Outcome1.html";
 }
 
@@ -180,6 +191,7 @@ function actionSurg() {
     localStorage.case1Action = "Surgery";
     localStorage.case1Outcome = outcomeSurg;
     console.log("Action: " + localStorage.case1Action);
+    record_time()
     window.location.href = "Outcome1.html";
 }
 
@@ -187,6 +199,7 @@ function actionIntervene() {
     localStorage.case1Action = "Intervention";
     localStorage.case1Outcome = outcomeInt;
     console.log("Action: " + localStorage.case1Action);
+    record_time()
     window.location.href = "Outcome1.html";
 }
 
