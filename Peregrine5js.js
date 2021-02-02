@@ -60,7 +60,8 @@ function drawDiv(divData, thehistory, parent) {
   keyAction = $.trim(divData[22]);
   localStorage.case5KeyAction = keyAction;
   console.log("Key Action: " + localStorage.case5KeyAction);
-
+  localStorage.case5KeyLoc = keyLocation;
+  
   var $caseDiv = $("<div/>");
   $caseDiv.addClass('Case-Details');  
   var casedetails = $("<p></p>").html("A " + age + "-year-old " + gender + " " + scenario); 
@@ -96,6 +97,11 @@ let timer = setInterval(function () {
 setTimeout(function () {
     clearInterval(timer);}, 999999);
 //to-do: record time at point of selection - save as variable
+
+function record_time(){  
+  localStorage.minutes = document.getElementById("minutes").innerHTML;
+  localStorage.seconds = $('#seconds').html()
+}
 
 function switchLUQ() {
     newLocation = "Left Upper Quadrant";
@@ -165,6 +171,7 @@ function actionObs() {
     console.log("Action: " + localStorage.case5Action);
         //something about using cookies & enabling samesite -- error seen bc developing on client side. Might look different when deployed.
     window.location.href = "Outcome5.html";
+    record_time(); 
 }
 
 
@@ -173,6 +180,7 @@ function actionCT() {
     localStorage.case5Outcome = outcomeCT;
     console.log("Action: " + localStorage.case5Action);
     window.location.href = "Outcome5.html";
+    record_time(); 
 }
 
 function actionSurg() {
@@ -180,6 +188,7 @@ function actionSurg() {
     localStorage.case5Outcome = outcomeSurg;
     console.log("Action: " + localStorage.case5Action);
     window.location.href = "Outcome5.html";
+    record_time(); 
 }
 
 function actionIntervene() {
@@ -187,4 +196,5 @@ function actionIntervene() {
     localStorage.case5Outcome = outcomeInt;
     console.log("Action: " + localStorage.case5Action);
     window.location.href = "Outcome5.html";
+    record_time(); 
 }

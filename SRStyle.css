@@ -4,9 +4,9 @@
     grid-template-rows: repeat(1, 1fr);
     grid-gap: 1rem;
     grid-auto-flow: row;
-    border: 4px solid #232D4B;
+    border: 4px solid #FF3500;
     border-radius: 8px;
-    background-color: #E57200;
+    background-color: #0096DF;
   }
   
   .heading {
@@ -49,13 +49,12 @@
   
   .results-ovrvw {
     grid-column: 1;
-  
     list-style-type: none;
     text-align: left;
     font-family: Helvetica, sans-serif;
     color: #FFFFFF;
-    background-color: #E57200;
-    border: 4px solid #232D4B;
+    background-color: #0096DF;
+    border: 4px solid #FF3500;
     border-radius: 8px;
     padding: 20px 10px 20px;
     box-sizing: border-box;
@@ -63,7 +62,6 @@
   
   .results-buttons {
     grid-column: 2;
-  
     border: none;
     padding: 50px;
     text-align: center;
@@ -78,8 +76,8 @@
   
   
   table {
-    background-color: #E57200;
-    border: 4px solid black;
+    background-color: #0096DF;
+    border: 4px solid #FF3500;
     border-radius: 8px;
     font-family: Helvetica, sans-serif;
   }
@@ -97,7 +95,7 @@
   span {
     font-size: 100%;
     font-weight: bold;
-    color: #232D4B;
+    color: #FCFDC2;
   }
   
   .chart {
