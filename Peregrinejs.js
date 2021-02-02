@@ -25,12 +25,12 @@ function readData(data) {
     	title = row[0];
     }
     }
-      drawDiv(row, title, "#caseDetails");
+    drawDiv(row, title, "#caseDetails");
     
   }
 
 
-function drawDiv(divData, thehistory, parent) {
+function drawDiv(divData, thehistory, parent, loc) {
   if (divData == null) return null;
 
   console.log("Case: " + title);
@@ -58,6 +58,8 @@ function drawDiv(divData, thehistory, parent) {
   keyImg = $.trim(divData[20]);
   localStorage.case1KeyImg = keyImg;
   keyLocation = $.trim(divData[21]);
+  localStorage.case1KeyLoc = keyLocation;
+  console.log(localStorage.case1KeyLoc);
   keyAction = $.trim(divData[22]);
   localStorage.case1KeyAction = keyAction;
   console.log("Key Action: " + localStorage.case1KeyAction);
