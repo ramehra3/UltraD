@@ -12,57 +12,66 @@ $(document).ready(function() {
 function readData(data) {
   var partfeed = data.feed.entry;
   var divData = [];
-  for (var i = 0; i < 2; i++) {
+  var length2 = Object.keys(partfeed).length-1;
+  //console.log(length2)
+  var i = 0 + Math.floor(Math.random() * length2);
     var JSONrow = partfeed[i].content.$t.split(',');
     var row = [];
-  for (var j = 0; j < JSONrow.length; j++) {
+   // console.log('the Current Case Data is: ' + JSONrow);
+    for (var j = 0; j < JSONrow.length; j++) {
       val = JSONrow[j].split(':')[1];
       row[j] = val;
+    if (i !== 0) {
+    	title = row[0];
     }
-    if (i != 0) {
-    	scenario = row[1];
-      drawCase(row, scenario, "#caseDetails");
-      drawVitals(row, scenario, "#vitals");
     }
+      drawDiv(row, title, "#caseDetails");
+    
   }
-}
 
-function drawCase(divData, scenario) {
+
+function drawDiv(divData, thehistory, parent) {
   if (divData == null) return null;
 
-  title = $.trim(divData[1]);
+  console.log("Case: " + title);
+  localStorage.case1Title = title;
+  console.log("Case 1: " + localStorage.case1Title);
+  scenario = $.trim(divData[1]);
   age = $.trim(divData[2]);
   gender = $.trim(divData[3]);
-  
-
-
-  var $caseDiv = $("<div/>");  
-  var casedetails = $("<p></p>").html("A " + age + "-year-old " + gender + scenario); 
-  $caseDiv.prepend(casedetails);
-  $('#caseDetails').append($caseDiv);
-  }
-
-function drawVitals (divData) {
-    tempc = $.trim(divData[4]);
-    tempf = $.trim(divData[5]);
-    //console.log("Temperature is"+tempf); values pull fine
-    bpsys = $.trim(divData[6]);
-    bpdia = $.trim(divData[7]);
-    hr = $.trim(divData[8]);
-    oxy = $.trim(divData[9]);
-
-    var $vitalsDiv = $("<div/>");
-    var vitals = $("<p></p>").html("T: " + tempc + "&degC / " + tempf + "&degF" + " <br> BP: " + bpsys + "/" + bpdia + " <br> HR: " + hr + "<br>SpO2: " + oxy);
-    $vitalsDiv.prepend(vitals);
-    $('#vitals').append($vitalsDiv);
-  }
-
-  /*
+  tempc = $.trim(divData[4]);
+  tempf = $.trim(divData[5]);
+  bpsys = $.trim(divData[6]);
+  bpdia = $.trim(divData[7]);
+  hr = $.trim(divData[8]);
+  oxy = $.trim(divData[9]);
   outcomeObs = $.trim(divData[10]);
   outcomeCT = $.trim(divData[11]);
   outcomeSurg = $.trim(divData[12]);
   outcomeInt = $.trim(divData[13]);
-*/
+  ruqimg = $.trim(divData[14]);
+  luqimg = $.trim(divData[15]);
+  subximg = $.trim(divData[16]);
+  bladderimg = $.trim(divData[17]);
+  lungrimg = $.trim(divData[18]);
+  lunglimg = $.trim(divData[19]);
+  keyImg = $.trim(divData[20]);
+  localStorage.case1KeyImg = keyImg;
+  keyLocation = $.trim(divData[21]);
+  keyAction = $.trim(divData[22]);
+  localStorage.case1KeyAction = keyAction;
+  console.log("Key Action: " + localStorage.case1KeyAction);
+
+  var $caseDiv = $("<div/>");
+  $caseDiv.addClass('Case-Details');  
+  var casedetails = $("<p></p>").html("A " + age + "-year-old " + gender + " " + scenario); 
+  $caseDiv.prepend(casedetails);
+  $('#caseDetails').append($caseDiv);
+  $('#BP').text('BP:' + bpsys  + '/' + bpdia);
+  $('#HR').text('HR:' + hr);
+  $('#T').text('T: '  + tempc +'\u00B0C' + '/' + tempf + '\u00b0F');
+  $('#O2').text('O2: ' + oxy);  
+}
 
 viewedRUQ = false;
 viewedLUQ = false;
@@ -74,7 +83,7 @@ viewedLungR = false;
 
 function showActions() {
     let x = document.getElementById("actionBox");
-    if (viewedRUQ,viewedLUQ,viewedSubxi,viewedBladder,viewedLungR, viewedLungL === true) {
+    if (viewedRUQ,viewedLUQ,viewedSubxi,viewedBladder,viewedLungR,viewedLungL === true) {
         x.style.display = "block";}
     else {x.style.display = "none";}
 }
@@ -92,7 +101,7 @@ setTimeout(function () {
 function switchLUQ() {
     newLocation = "Left Upper Quadrant";
     document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case1/luq-free-fluid.gif";
+    document.getElementById("activeWindow").src= ("http://drive.google.com/uc?export=view&id=" + luqimg);
     viewedLUQ = true;
     showActions();
 }
@@ -100,7 +109,7 @@ function switchLUQ() {
 function switchRUQ() {
     newLocation = "Right Upper Quadrant";
     document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case1/ruq-nl-2.gif";
+    document.getElementById("activeWindow").src= ("http://drive.google.com/uc?export=view&id=" + ruqimg);
     viewedRUQ = true;
     showActions();
 }
@@ -108,7 +117,7 @@ function switchRUQ() {
 function switchSubxi() {
     newLocation = "Subxiphoid";
     document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case1/subxi-nl-1.gif";
+    document.getElementById("activeWindow").src= ("http://drive.google.com/uc?export=view&id=" + subximg);
     viewedSubxi = true;
     showActions();
 }
@@ -116,7 +125,7 @@ function switchSubxi() {
 function switchBladder() {
     newLocation = "Pelvic";
     document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case1/bladder-nl.gif";
+    document.getElementById("activeWindow").src= ("http://drive.google.com/uc?export=view&id=" + bladderimg);
     viewedBladder = true;
     showActions();
 }
@@ -124,7 +133,7 @@ function switchBladder() {
 function switchLungr() {
     newLocation = "Lung (R)";
     document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case1/normal-lung-slide.gif";
+    document.getElementById("activeWindow").src= ("http://drive.google.com/uc?export=view&id=" + lungrimg);
     viewedLungR = true;
     showActions();
 }
@@ -132,7 +141,7 @@ function switchLungr() {
 function switchLungl() {
     newLocation = "Lung (L)";
     document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case1/normal-lung-slide.gif";
+    document.getElementById("activeWindow").src= ("http://drive.google.com/uc?export=view&id=" + lunglimg);
     viewedLungL = true;
     showActions();
 }
@@ -152,33 +161,33 @@ for (var i = 0; i < btns.length; i++) {
 
 //Action Buttons Here
 function actionObs() {
-    localStorage.setItem("actionChoice1", "Observation");//want to store this choice and reference it later (in Albo)
-    window.location.href = "Outcome1-Obs.html";
-    document.getElementById("c1result").innerHTML = localStorage.getItem("actionChoice1");
-    document.getElementById("explanationObs").innerText = (case1Outcomes.outcomeObs);
+    localStorage.case1Action = "Observation";//want to store this choice and reference it later (in Albo)
+    localStorage.case1Outcome = outcomeObs;
+    console.log("Action: " + localStorage.case1Action);
+        //something about using cookies & enabling samesite -- error seen bc developing on client side. Might look different when deployed.
+    window.location.href = "Outcome1.html";
 }
 
 
 function actionCT() {
-    localStorage.setItem("actionChoice1", "CT Scan");
-    window.location.href = "Outcome1-CT.html";
-    document.getElementById("c1result").innerHTML = localStorage.getItem("actionChoice1");
-    document.getElementById("explanationCT").innerText = (case1Outcomes.outcomeCT);
+    localStorage.case1Action = "CT Scan";
+    localStorage.case1Outcome = outcomeCT;
+    console.log("Action: " + localStorage.case1Action);
+    window.location.href = "Outcome1.html";
 }
 
 function actionSurg() {
-    localStorage.setItem("actionChoice1", "Surgery");
-    window.location.href = "Outcome1-Surg.html";
-    document.getElementById("c1result").innerHTML = localStorage.getItem("actionChoice1");
-    document.getElementById("explanationSurg").innerText = (case1Outcomes.outcomeSurg);
-
+    localStorage.case1Action = "Surgery";
+    localStorage.case1Outcome = outcomeSurg;
+    console.log("Action: " + localStorage.case1Action);
+    window.location.href = "Outcome1.html";
 }
 
 function actionIntervene() {
-    localStorage.setItem("actionChoice1", "Intervention");
-    window.location.href = "Outcome1-Intervene.html";
-    document.getElementById("c1result").innerHTML = localStorage.getItem("actionChoice1");
-    document.getElementById("explanationInt").innerText = (case1Outcomes.outcomeInt);
+    localStorage.case1Action = "Intervention";
+    localStorage.case1Outcome = outcomeInt;
+    console.log("Action: " + localStorage.case1Action);
+    window.location.href = "Outcome1.html";
 }
 
 

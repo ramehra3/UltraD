@@ -1,31 +1,77 @@
-class CaseData {
-    constructor(age,gender,scenario,bpsys,bpdia,hr,tempc,oxy)
-        {this.age = age;
-        this.gender = gender;
-        this.scenario = scenario;
-        this.bpsys = bpsys;
-        this.bpdia = bpdia;
-        this.hr = hr;
-        this.tempc = tempc;
-        this.oxy = oxy;}
+var JSONFEED = 'https://spreadsheets.google.com/feeds/list/1dpcguZ2Ak0zc0Sh1WoPV0c0tXVxre3yGWC1Wo5ElWtc/1/public/basic?alt=json';
+
+$(document).ready(function() {
+  $.ajax({
+    url: JSONFEED,
+    success: function(data) {
+      readData(data);
+    }
+  });
+});
+
+function readData(data) {
+  var partfeed = data.feed.entry;
+  var divData = [];
+  var length2 = Object.keys(partfeed).length-1;
+  //console.log(length2)
+  var i = 0 + Math.floor(Math.random() * length2);
+    var JSONrow = partfeed[i].content.$t.split(',');
+    var row = [];
+   // console.log('the Current Case Data is: ' + JSONrow);
+    for (var j = 0; j < JSONrow.length; j++) {
+      val = JSONrow[j].split(':')[1];
+      row[j] = val;
+    if (i !== 0) {
+    	title = row[0];
+    }
+    }
+      drawDiv(row, title, "#caseDetails");
+    
+  }
+
+
+function drawDiv(divData, thehistory, parent) {
+  if (divData == null) return null;
+
+  console.log("Case: " + title);
+  localStorage.case3Title = title;
+  console.log("Case 3: " + localStorage.case3Title);
+  scenario = $.trim(divData[1]);
+  age = $.trim(divData[2]);
+  gender = $.trim(divData[3]);
+  tempc = $.trim(divData[4]);
+  tempf = $.trim(divData[5]);
+  bpsys = $.trim(divData[6]);
+  bpdia = $.trim(divData[7]);
+  hr = $.trim(divData[8]);
+  oxy = $.trim(divData[9]);
+  outcomeObs = $.trim(divData[10]);
+  outcomeCT = $.trim(divData[11]);
+  outcomeSurg = $.trim(divData[12]);
+  outcomeInt = $.trim(divData[13]);
+  ruqimg = $.trim(divData[14]);
+  luqimg = $.trim(divData[15]);
+  subximg = $.trim(divData[16]);
+  bladderimg = $.trim(divData[17]);
+  lungrimg = $.trim(divData[18]);
+  lunglimg = $.trim(divData[19]);
+  keyImg = $.trim(divData[20]);
+  localStorage.case3KeyImg = keyImg;
+  keyLocation = $.trim(divData[21]);
+  keyAction = $.trim(divData[22]);
+  localStorage.case3KeyAction = keyAction;
+  console.log("Key Action: " + localStorage.case3KeyAction);
+
+  var $caseDiv = $("<div/>");
+  $caseDiv.addClass('Case-Details');  
+  var casedetails = $("<p></p>").html("A " + age + "-year-old " + gender + " " + scenario); 
+  $caseDiv.prepend(casedetails);
+  $('#caseDetails').append($caseDiv);
+  $('#BP').text('BP:' + bpsys  + '/' + bpdia);
+  $('#HR').text('HR:' + hr);
+  $('#T').text('T: '  + tempc +'\u00B0C' + '/' + tempf + '\u00b0F');
+  $('#O2').text('O2: ' + oxy);  
 }
-
-let case3 = new CaseData(38, //age
-    "male", //gender
-    "presents to the Emergency Department after an MMA fight in which he was knocked out following a series of body blows. He has numerous contusions along his abdomen, and complains of diffuse abdominal pain.", 
-    124, //BPsys
-    82,  //BPdia
-    107, //HR
-    36.8, //Tcelcius (need conversion)
-    97 ); //O2 Saturation
-
-document.getElementById("caseDetails").innerHTML =
-    ("A " + case3.age + "-year-old " + case3.gender + " " + case3.scenario);
-document.getElementById("BP").innerHTML =("BP: " + case3.bpsys + "/" + case3.bpdia);
-document.getElementById("HR").innerHTML =("HR: " + case3.hr);
-document.getElementById("T").innerHTML =("T: " + case3.tempc +"°C"); //fix degree symbol//
-document.getElementById("O2").innerHTML =("spO2: " + case3.oxy +"%");
-
 
 viewedRUQ = false;
 viewedLUQ = false;
@@ -37,11 +83,10 @@ viewedLungR = false;
 
 function showActions() {
     let x = document.getElementById("actionBox");
-    if (viewedRUQ,viewedLUQ,viewedSubxi,viewedBladder,viewedLungR, viewedLungL === true) {
+    if (viewedRUQ,viewedLUQ,viewedSubxi,viewedBladder,viewedLungR,viewedLungL === true) {
         x.style.display = "block";}
     else {x.style.display = "none";}
 }
-
 let sec = 0;
 function pad(val) {return val > 9 ? val : "0" + val;}
 let timer = setInterval(function () {
@@ -56,7 +101,7 @@ setTimeout(function () {
 function switchLUQ() {
     newLocation = "Left Upper Quadrant";
     document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case3/luq-nl-c3.gif";
+    document.getElementById("activeWindow").src= ("http://drive.google.com/uc?export=view&id=" + luqimg);
     viewedLUQ = true;
     showActions();
 }
@@ -64,7 +109,7 @@ function switchLUQ() {
 function switchRUQ() {
     newLocation = "Right Upper Quadrant";
     document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case3/ruq-pos-c3.gif";
+    document.getElementById("activeWindow").src= ("http://drive.google.com/uc?export=view&id=" + ruqimg);
     viewedRUQ = true;
     showActions();
 }
@@ -72,7 +117,7 @@ function switchRUQ() {
 function switchSubxi() {
     newLocation = "Subxiphoid";
     document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case3/subxi-nl-c3.gif";
+    document.getElementById("activeWindow").src= ("http://drive.google.com/uc?export=view&id=" + subximg);
     viewedSubxi = true;
     showActions();
 }
@@ -80,7 +125,7 @@ function switchSubxi() {
 function switchBladder() {
     newLocation = "Pelvic";
     document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case3/bladder-nl-m-c3.gif";
+    document.getElementById("activeWindow").src= ("http://drive.google.com/uc?export=view&id=" + bladderimg);
     viewedBladder = true;
     showActions();
 }
@@ -88,7 +133,7 @@ function switchBladder() {
 function switchLungr() {
     newLocation = "Lung (R)";
     document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case3/nl-lung-2-c2-L-Copy.gif";
+    document.getElementById("activeWindow").src= ("http://drive.google.com/uc?export=view&id=" + lungrimg);
     viewedLungR = true;
     showActions();
 }
@@ -96,7 +141,7 @@ function switchLungr() {
 function switchLungl() {
     newLocation = "Lung (L)";
     document.getElementById("currentLocation").innerText = ("Current Location: " + newLocation);
-    document.getElementById("activeWindow").src="Case3/nl-lung-1-c2-R-Copy.gif";
+    document.getElementById("activeWindow").src= ("http://drive.google.com/uc?export=view&id=" + lunglimg);
     viewedLungL = true;
     showActions();
 }
@@ -114,56 +159,33 @@ for (var i = 0; i < btns.length; i++) {
     });
 }
 
+//Action Buttons Here
 function actionObs() {
-    actionChoice = "Observation";
-    window.location.href = "Outcome3-Obs.html";
+    localStorage.case3Action = "Observation";//want to store this choice and reference it later (in Albo)
+    localStorage.case3Outcome = outcomeObs;
+    console.log("Action: " + localStorage.case3Action);
+        //something about using cookies & enabling samesite -- error seen bc developing on client side. Might look different when deployed.
+    window.location.href = "Outcome3.html";
 }
 
 
 function actionCT() {
-    actionChoice = "CT Scan";
-    window.location.href = "Outcome3-CT.html";
+    localStorage.case3Action = "CT Scan";
+    localStorage.case3Outcome = outcomeCT;
+    console.log("Action: " + localStorage.case3Action);
+    window.location.href = "Outcome3.html";
 }
 
 function actionSurg() {
-    actionChoice = "Surgery";
-    window.location.href = "Outcome3-Surg.html";
+    localStorage.case3Action = "Surgery";
+    localStorage.case3Outcome = outcomeSurg;
+    console.log("Action: " + localStorage.case3Action);
+    window.location.href = "Outcome3.html";
 }
 
 function actionIntervene() {
-    actionChoice = "Intervention";
-    window.location.href = "Outcome3-Intervene.html";
+    localStorage.case3Action = "Intervention";
+    localStorage.case3Outcome = outcomeInt;
+    console.log("Action: " + localStorage.case3Action);
+    window.location.href = "Outcome3.html";
 }
-/*
-class caseOutcomes {
-    constructor(outcomeObs, outcomeCT, outcomeSurg, outcomeInt) {
-        this.outcomeObs = outcomeObs;
-        this.outcomeCT = outcomeCT;
-        this.outcomeSurg = outcomeSurg;
-        this.outcomeInt = outcomeInt;
-    }
-}
-
-let case1Outcomes = new caseOutcomes("This patient's FAST exam is positive in the left upper quadrant. Patient is admitted overnight for further observation, and spends the night in excruciating pain without a clue as to why. The next day, a CT scan reveals a grade II splenic laceration which you missed.",
-    "This patient's FAST exam is positive in the left upper quadrant. You take the patient for a CT scan, which reveals a grade II splenic laceration. Patient is admitted overnight.",
-    "This patient's FAST exam is positive in the left upper quadrant. Patient is rushed to the operating room for an exploratory laparotomy, which finds no evidence of damage. Patient is discharged home with a scar and a story to remember you by.",
-    "This patient's FAST exam is positive in the left upper quadrant. You perform a needle thoracostomy and place a chest tube in the patient's left chest which does not put out any fluid. A colleague suggests sending the patient for a CT scan, which ultimately reveals a grade II splenic laceration. Patient is admitted overnight with a new story to tell his wife, a malpractice attorney.");
-
-//success or fail message
-if (actionChoice === "CT Scan") {
-    document.getElementById("result").innerText = ("Success!")
-}
-else {document.getElementById("result").innerText = ("Uh Oh!");
-}
-
-
-if (actionChoice === "Observation") {
-document.getElementById("explanation").innerText = (case1Outcomes.outcomeObs);}
-
-if (actionChoice === "CT Scan") {
-    document.getElementById("explanation").innerText = (case1Outcomes.outcomeCT);}
-if (actionChoice === "Surgery") {
-    document.getElementById("explanation").innerText = (case1Outcomes.outcomeSurg);}
-if (actionChoice === "Intervention") {
-    document.getElementById("explanation").innerText = (case1Outcomes.outcomeInt);}
-    */

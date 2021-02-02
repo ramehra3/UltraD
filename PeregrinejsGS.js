@@ -13,19 +13,19 @@ function readData(data) {
   var partfeed = data.feed.entry;
   var divData = [];
   var length2 = Object.keys(partfeed).length-1;
-  console.log(length2)
-  var i = 2 + Math.floor(Math.random() * length2);
+  //console.log(length2)
+  var i = 0 + Math.floor(Math.random() * length2);
     var JSONrow = partfeed[i].content.$t.split(',');
     var row = [];
-    console.log('the Current Case Data is: ' + JSONrow);
+   // console.log('the Current Case Data is: ' + JSONrow);
     for (var j = 0; j < JSONrow.length; j++) {
       val = JSONrow[j].split(':')[1];
       row[j] = val;
     if (i !== 0) {
-    	scenario = row[1];
+    	title = row[0];
     }
     }
-      drawDiv(row, scenario, "#caseDetails");
+      drawDiv(row, title, "#caseDetails");
     
   }
 
@@ -33,7 +33,10 @@ function readData(data) {
 function drawDiv(divData, thehistory, parent) {
   if (divData == null) return null;
 
-  console.log(scenario);
+  console.log("Case: " + title);
+  localStorage.case1Title = title;
+  console.log("Case 1: " + localStorage.case1Title);
+  scenario = $.trim(divData[1]);
   age = $.trim(divData[2]);
   gender = $.trim(divData[3]);
   tempc = $.trim(divData[4]);
@@ -42,10 +45,10 @@ function drawDiv(divData, thehistory, parent) {
   bpdia = $.trim(divData[7]);
   hr = $.trim(divData[8]);
   oxy = $.trim(divData[9]);
-  // outcomeObs = $.trim(divData[10]);
-  // outcomeCT = $.trim(divData[11]);
-  // outcomeSurg = $.trim(divData[12]);
-  // outcomeInt = $.trim(divData[13]);
+  outcomeObs = $.trim(divData[10]);
+  outcomeCT = $.trim(divData[11]);
+  outcomeSurg = $.trim(divData[12]);
+  outcomeInt = $.trim(divData[13]);
   ruqimg = $.trim(divData[14]);
   luqimg = $.trim(divData[15]);
   subximg = $.trim(divData[16]);
@@ -55,7 +58,7 @@ function drawDiv(divData, thehistory, parent) {
 
   var $caseDiv = $("<div/>");
   $caseDiv.addClass('Case-Details');  
-  var casedetails = $("<p></p>").html("A " + age + "-year-old " + gender + scenario); 
+  var casedetails = $("<p></p>").html("A " + age + "-year-old " + gender + " " + scenario); 
   $caseDiv.prepend(casedetails);
   $('#caseDetails').append($caseDiv);
   $('#BP').text('BP:' + bpsys  + '/' + bpdia);
@@ -152,9 +155,10 @@ for (var i = 0; i < btns.length; i++) {
 
 //Action Buttons Here
 function actionObs() {
-    localStorage.setItem("actionChoice1", "Observation");//want to store this choice and reference it later (in Albo)
+    localStorage.case1Action = "Observation";//want to store this choice and reference it later (in Albo)
+    console.log("Action: " + actionChoice1);
     window.location.href = "Outcome1-Obs.html";
-    document.getElementById("c1result").innerHTML = localStorage.getItem("actionChoice1");
+    document.getElementById("c1result").innerHTML = localStorage.case1Action;
     document.getElementById("explanationObs").innerText = (case1Outcomes.outcomeObs);
 }
 

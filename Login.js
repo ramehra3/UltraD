@@ -10,7 +10,7 @@ $('#loginForm').submit(function() {
   
   function loginUser(email, pwd) {
     firebase.auth().signInWithEmailAndPassword(email, pwd).then(function(user) {
-      window.location.replace("./Case1Details.html");
+      window.location.replace("./Main%20UI.html");
   
       // Idea: Make the re-direct an independant listener function that triggers when the user state changes (In Progress below)
     }, function(error) {
