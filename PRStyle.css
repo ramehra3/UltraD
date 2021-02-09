@@ -207,7 +207,7 @@ b {
 
 
 .ShiftButton:hover {
- background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+ background: linear-gradient(to bottom, #0096DF 5%, #ffffff 100%);
  background-color: #f6f6f6;
 }
 
