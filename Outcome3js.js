@@ -35,12 +35,12 @@ if (localStorage.case3KeyAction === "CT Scan")
 
 if (localStorage.case3KeyAction === "Surgery")
     {document.getElementById("rememberBox").src= './ProgramFiles/RememberSurg.svg'};
-
+    
 if (localStorage.case3KeyAction === "Intervention")
     {document.getElementById("rememberBox").src= './ProgramFiles/RememberInt.svg'};
 //Score Calculator
 $('#decPoints1').text(decision_score);
 
 $('#timePoints1').text(time_score);
-localStorage.case2Score = time_score + decision_score;
+localStorage.case3Score = time_score + decision_score;
 $('#totalPoints1').text(time_score+decision_score);
