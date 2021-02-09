@@ -29,3 +29,4 @@ $("#new-shift").click(function() {
 
   });
   console.log(localStorage.minutes, localStorage.seconds);
+
