@@ -5,3 +5,8 @@
   font-size: 24px;
   cursor: pointer;
 }
+
+.ShiftButton:hover {
+    background:linear-gradient(to bottom, #0096DF 5%, #ffffff 100%);
+    background-color:#f6f6f6;
+}
