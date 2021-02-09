@@ -125,13 +125,14 @@ figure {
 
 .RetryButton {
     box-shadow:inset 0px 1px 0px 0px #ffffff;
-    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-    background-color:#ffffff;
+    background:linear-gradient(to bottom, #31BBF6 5%, #0096DF 100%);
+    background-color:#31BBF6;
+    text-align: center;
     border-radius:6px;
     border:1px solid #dcdcdc;
     display:inline-block;
     cursor:pointer;
-    color:#666666;
+    color:#FCFDC2;
     font-family:Arial;
     font-size:2vw;
     font-weight:bold;
@@ -140,7 +141,7 @@ figure {
     text-shadow:0px 1px 0px #ffffff;
 }
 .RetryButton:hover {
-    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+    background:linear-gradient(to bottom, #0096DF 5%, #ffffff 100%);
     background-color:#f6f6f6;
 }
 .RetryButton:active {
@@ -149,13 +150,14 @@ figure {
 }
 .NextCaseButton {
     box-shadow:inset 0px 1px 0px 0px #ffffff;
-    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-    background-color:#ffffff;
+    background:linear-gradient(to bottom, #31BBF6 5%, #0096DF 100%);
+    background-color:#31BBF6;
+    text-align: center;
     border-radius:6px;
     border:1px solid #dcdcdc;
     display:inline-block;
     cursor:pointer;
-    color:#666666;
+    color:#FCFDC2;
     font-family:Arial;
     font-size:2vw;
     font-weight:bold;
@@ -164,7 +166,7 @@ figure {
     text-shadow:0px 1px 0px #ffffff;
 }
 .NextCaseButton:hover {
-    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+    background:linear-gradient(to bottom, #0096DF 5%, #ffffff 100%);
     background-color:#f6f6f6;
 }
 .NextCaseButton:active {
@@ -174,13 +176,14 @@ figure {
 
 .ReviewShiftButton {
     box-shadow:inset 0px 1px 0px 0px #ffffff;
-    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-    background-color:#ffffff;
+    background:linear-gradient(to bottom, #31BBF6 5%, #0096DF 100%);
+    background-color:#31BBF6;
+    text-align: center;
     border-radius:6px;
     border:1px solid #dcdcdc;
     display:inline-block;
     cursor:pointer;
-    color:#666666;
+    color:#FCFDC2;
     font-family:Arial;
     font-size:2vw;
     font-weight:bold;
@@ -189,7 +192,7 @@ figure {
     text-shadow:0px 1px 0px #ffffff;
 }
 .ReviewShiftButton:hover {
-    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+    background:linear-gradient(to bottom, #0096DF 5%, #ffffff 100%);
     background-color:#f6f6f6;
 }
 .ReviewShiftButton:active {
@@ -199,13 +202,14 @@ figure {
 
 .EndShiftButton {
     box-shadow:inset 0px 1px 0px 0px #ffffff;
-    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-    background-color:#ffffff;
+    background:linear-gradient(to bottom, #31BBF6 5%, #0096DF 100%);
+    background-color:#31BBF6;
+    text-align: center;
     border-radius:6px;
     border:1px solid #dcdcdc;
     display:inline-block;
     cursor:pointer;
-    color:#666666;
+    color:#FCFDC2;
     font-family:Arial;
     font-size:2vw;
     font-weight:bold;
@@ -214,7 +218,7 @@ figure {
     text-shadow:0px 1px 0px #ffffff;
 }
 .EndShiftButton:hover {
-    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+    background:linear-gradient(to bottom, #0096DF 5%, #ffffff 100%);
     background-color:#f6f6f6;
 }
 
@@ -222,4 +226,3 @@ figure {
     position:relative;
     top:1px;
 }
-
