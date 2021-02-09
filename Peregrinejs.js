@@ -170,7 +170,7 @@ function record_time(){
   localStorage.seconds = $('#seconds').html()}
 //Action Buttons Here
 function actionObs() {
-    localStorage.case1Action = "Observation";//want to store this choice and reference it later (in Albo)
+    localStorage.case1Action = "Observation";
     localStorage.case1Outcome = outcomeObs;
     console.log("Action: " + localStorage.case1Action);
         //something about using cookies & enabling samesite -- error seen bc developing on client side. Might look different when deployed.
