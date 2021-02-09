@@ -20,7 +20,7 @@ $('#score2').text(localStorage.case2Score);
 $('#score3').text(localStorage.case3Score);
 $('#score4').text(localStorage.case4Score);
 $('#score5').text(localStorage.case5Score);
-
+console.log(localStorage.case5Score)
 //If click shift review, clear local localStorage
 $("#new-shift").click(function() {
   console.log('starting new shift, clearing storage');
