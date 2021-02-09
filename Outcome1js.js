@@ -3,7 +3,7 @@ document.getElementById("diagnosis").innerText = localStorage.case1Title;
 document.getElementById("keyImage").src = ("http://drive.google.com/uc?export=view&id=" + localStorage.case1KeyImg);
 
 var time_score = -1*( parseInt(localStorage.minutes)*60 + parseInt(localStorage.seconds));
-console.log(time_score);
+console.log("time score: " + time_score);
 //Show Result
 if (localStorage.case1Action === localStorage.case1KeyAction)
     {
@@ -20,22 +20,32 @@ console.log("You Chose: " + localStorage.case1Action);
 console.log("Key Action: " + localStorage.case1KeyAction);
     //display image matching action
     //document.getElementById("actionIcon").src = ();
+if (localStorage.case1Action === "Observation")
+    {document.getElementById("actionicon").src= './ProgramFiles/Icons/obs.png'}
 
+if (localStorage.case1Action === "CT Scan")
+    {document.getElementById("actionicon").src= './ProgramFiles/Icons/ctScan.png'}
+
+if (localStorage.case1Action === "Surgery")
+    {document.getElementById("actionicon").src= './ProgramFiles/Icons/surg.png'}
+
+if (localStorage.case1Action === "Intervention")
+    {document.getElementById("actionicon").src= './ProgramFiles/Icons/intervention.png'}
 //display Explanation
 document.getElementById("explanation").innerText = (localStorage.case1Outcome);
 
 //Show correct Remember Box
 if (localStorage.case1KeyAction === "Observation")
-    {document.getElementById("rememberBox").src= './ProgramFiles/RememberObs.svg'}
+    {document.getElementById("rememberBox").src= './ProgramFiles/RememberObs.svg'};
 
 if (localStorage.case1KeyAction === "CT Scan")
-    {document.getElementById("rememberBox").src= './ProgramFiles/RememberCT.svg'}
+    {document.getElementById("rememberBox").src= './ProgramFiles/RememberCT.svg'};
 
 if (localStorage.case1KeyAction === "Surgery")
-    {document.getElementById("rememberBox").src= './ProgramFiles/RememberSurg.svg'}
+    {document.getElementById("rememberBox").src= './ProgramFiles/RememberSurg.svg'};
 
 if (localStorage.case1KeyAction === "Intervention")
-    {document.getElementById("rememberBox").src= './ProgramFiles/RememberInt.svg'}
+    {document.getElementById("rememberBox").src= './ProgramFiles/RememberInt.svg'};
 //Score Calculator
 console.log(decision_score);
 $('#decPoints1').text(decision_score);

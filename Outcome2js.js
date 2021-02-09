@@ -21,23 +21,33 @@ console.log("You Chose: " + localStorage.case2Action);
 console.log("Key Action: " + localStorage.case2KeyAction);
     //display image matching action
     //document.getElementById("actionIcon").src = ();
+if (localStorage.case2Action === "Observation")
+    {document.getElementById("actionicon").src= './ProgramFiles/Icons/obs.png'}
 
+if (localStorage.case2Action === "CT Scan")
+    {document.getElementById("actionicon").src= './ProgramFiles/Icons/ctScan.png'}
+
+if (localStorage.case2Action === "Surgery")
+    {document.getElementById("actionicon").src= './ProgramFiles/Icons/surg.png'}
+
+if (localStorage.case2Action === "Intervention")
+    {document.getElementById("actionicon").src= './ProgramFiles/Icons/intervention.png'}
 //display Explanation
 document.getElementById("explanation").innerText = (localStorage.case2Outcome);
 
 
 
 //Show correct Remember Box
-if (localStorage.case1KeyAction === "Observation")
+if (localStorage.case2KeyAction === "Observation")
     {document.getElementById("rememberBox").src= './ProgramFiles/RememberObs.svg'}
 
-if (localStorage.case1KeyAction === "CT Scan")
+if (localStorage.case2KeyAction === "CT Scan")
     {document.getElementById("rememberBox").src= './ProgramFiles/RememberCT.svg'}
 
-if (localStorage.case1KeyAction === "Surgery")
+if (localStorage.case2KeyAction === "Surgery")
     {document.getElementById("rememberBox").src= './ProgramFiles/RememberSurg.svg'}
 
-if (localStorage.case1KeyAction === "Intervention")
+if (localStorage.case2KeyAction === "Intervention")
     {document.getElementById("rememberBox").src= './ProgramFiles/RememberInt.svg'}
 //Score Calculator
 

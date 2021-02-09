@@ -17,7 +17,17 @@ console.log("You Chose: " + localStorage.case3Action);
 console.log("Key Action: " + localStorage.case3KeyAction);
     //display image matching action
     //document.getElementById("actionIcon").src = ();
+if (localStorage.case3Action === "Observation")
+    {document.getElementById("actionicon").src= './ProgramFiles/Icons/obs.png'}
 
+if (localStorage.case3Action === "CT Scan")
+    {document.getElementById("actionicon").src= './ProgramFiles/Icons/ctScan.png'}
+
+if (localStorage.case3Action === "Surgery")
+    {document.getElementById("actionicon").src= './ProgramFiles/Icons/surg.png'}
+
+if (localStorage.case3Action === "Intervention")
+    {document.getElementById("actionicon").src= './ProgramFiles/Icons/intervention.png'}
 //display Explanation
 document.getElementById("explanation").innerText = (localStorage.case3Outcome);
 
