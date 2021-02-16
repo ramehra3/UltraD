@@ -50,11 +50,11 @@ b {
 
 .ScoreData {
  grid-area: ScoreData;
- background-color: rgba(229,114,0,1);
- color: rgba(35,45,75,1);
+ background-color: 0096DF;
+ color: #FFFFFF;
  border-color: rgba(35,45,75,1);
- border: solid;
- border-radius: 2vw;
+ border: 4px solid #FF3500;
+ border-radius: 8px;
  text-align: center;
  font-size: 2vw;
  font-family: "Libre Franklin", sans-serif;
@@ -62,11 +62,11 @@ b {
 
 .MostMissed {
  grid-area: MostMissed;
- background-color: rgba(229,114,0,1);
- color: rgba(35,45,75,1);
+ background-color: #0096DF;
+ color: #FFFFFF;
  border-color: rgba(35,45,75,1);
- border: solid;
- border-radius: 2vw;
+ border: 4px solid #FF3500;
+ border-radius: 8px;
  text-align: center;
  font-size: 2vw;
  font-family: "Libre Franklin", sans-serif;
