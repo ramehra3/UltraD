@@ -42,7 +42,10 @@ b {
  color: #E57200;
  font-family: 'Libre Franklin', sans-serif;
  font-weight: 150;
- background-color: #232D4B;
+ background-color: #0096DF;
+ border: 4px solid #FF3500;
+ border-radius: 8px;
+}
 }
 
 .ScoreData {
