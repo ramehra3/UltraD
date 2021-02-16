@@ -80,7 +80,7 @@ viewedSubxi = false;
 viewedBladder = false;
 viewedLungL = false;
 viewedLungR = false;
-showActions();
+
 
 function showActions() {
     let x = document.getElementById("actionBox");
@@ -88,6 +88,8 @@ function showActions() {
         x.style.display = "block";}
     else {x.style.display = "none";}
 }
+showActions();
+
 let sec = 0;
 function pad(val) {return val > 9 ? val : "0" + val;}
 let timer = setInterval(function () {
