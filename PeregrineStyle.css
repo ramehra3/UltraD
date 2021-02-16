@@ -72,41 +72,42 @@ html {background-color:#282b2b}
 }
 
 #bodyImage{
-    height:39vw;
+    height:35vw;
     object-fit:cover;
 }
 #ruqicon {
     position:absolute;
     z-index:1;
-    bottom:25vw;
+    bottom: 21vw;
     right:9.5vw;
-    height:2vw;}
+    height:2vw;
+}
 
 #luqicon {
     position:absolute;
     z-index:1;
-    bottom:25vw;
+    bottom:21vw;
     right:5vw;
     height:2vw;}
 
 #subxicon {
     position:absolute;
     z-index:1;
-    bottom:26vw;
+    bottom:23vw;
     right:7.25vw;
     height:2vw;}
 
 #bladdericon {
     position:absolute;
     z-index:1;
-    bottom:21vw;
+    bottom:16vw;
     right:7.25vw;
     height:2vw;}
 
 #rLungicon {
     position:absolute;
     z-index:1;
-    bottom:29vw;
+    bottom:26vw;
     right:9.5vw;
     height:2vw;}
 
@@ -114,7 +115,7 @@ html {background-color:#282b2b}
 #lLungicon {
     position:absolute;
     z-index:1;
-    bottom:29vw;
+    bottom:26vw;
     right:5vw;
     height:2vw;}
 
