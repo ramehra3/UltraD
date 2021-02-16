@@ -80,7 +80,7 @@ viewedSubxi = false;
 viewedBladder = false;
 viewedLungL = false;
 viewedLungR = false;
-
+showActions();
 
 function showActions() {
     let x = document.getElementById("actionBox");
