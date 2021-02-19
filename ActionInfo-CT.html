@@ -12,7 +12,8 @@
 </script>
 </head>
 <link rel="stylesheet" href="ActionInfo.css">
-<div class="Tabs">
+<div class="grid-container">
+<div class="Header">
     <a href=ActionInfo-Obs.html>Observation</a> | <a href=ActionInfo-CT.html>CT Scan</a> | <a href=ActionInfo-Surgery.html>Surgery</a> | <a href=ActionInfo-Intervene.html>Intervention</a>
 </div>
 
@@ -22,22 +23,24 @@
     <h1 id="reviewAction">
         CT Scan
     </h1>
-    <img src="./ProgramFiles/Icons/ctScan.png" class="actionIcon" id="ctIcon">
+</div>
+<div class="ActionIcon">    
+<img src="./ProgramFiles/Icons/ctScan.png" class="ActionIcon" id="ctIcon">
 </div>
 
-<div class="ctInfo">
+<div class="ActionInfo">
     This is some information about CT scans and how they look for things in the body and their role in trauma. Multiple-word sentences, cited information, and probably some acronyms.
 </div>
 
 
-<div class="Remember">
-    <img src="ProgramFiles/RememberCT.svg">
+<div class="RememberBox">
+    <img id="RememberBox" src="ProgramFiles/RememberCT.svg">
 </div>
+    <!-- add alt remember box type color -->
 
 
-
-<div class="Navigation">
+<div class="NavBar">
     <a href=Main%20UI.html>Begin Shift</a> | <a href=Progress%20Report.html>Progress Report</a> | <a href="ShiftReview.html">Review Shift</a>
 </div>
-
+</div>
 </html>
