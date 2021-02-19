@@ -1,13 +1,26 @@
+html {background-color: #282b2b;}
+
+/* 
+To-Do:
+    Align Content titles
+    Fit US Image in grid
+    Nav Bar
+    Point Border - Change color & round borders
+*/
+
+
 .grid-container {
     display: grid;
-    grid-template-columns: 48vw 49vw;
+    grid-template-columns: 10vw 40vw 40vw 10vw;
     grid-template-rows: 10vw 25vw 31vw 10vw;
     gap: 1px 1px;
     grid-template-areas:
-    "Outcome Points"
-    "Action Key"
-    "Remember Key"
-    "Point-Breakdown Navigation";
+    ". Outcome Points ."
+    ". Action Key ."
+    ". Remember Key ."
+    ". Point-Breakdown Navigation .";
+    font-family: consolas;
+    color:#fcf2c2;
 }
 .Outcome { grid-area: Outcome;
     font-size:3vw;}
@@ -57,6 +70,7 @@
     "Image-Acquisition imagePoints"
     "Time timePoints"
     "Total totalPoints";
+    border:dotted;
 }
 .points { grid-area: points;
     text-align:center;}
@@ -80,9 +94,6 @@
     border-radius:50%;
     height:6vw;
 }
-#action {
-
-}
 
 
 h3 {
@@ -90,28 +101,17 @@ h3 {
     font-size:2vw;
 }
 
-#takeAwayBox {
-    border:dot-dot-dash;
-}
 
 .remember{
     height:8vw;
 }
 
-figure {
-    text-align:center;
-    font-size:2.5vw;
-}
 
-.arrow {
-    height:4vw;
-}
 
-#imageBreakdown {
 
-}
 #keyImage {
-    height:33vw;
+    width:max-content;
+    height:max-content;
 }
 #diagnosis {
     font-size:3vw;

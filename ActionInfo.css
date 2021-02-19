@@ -13,7 +13,7 @@ html {background-color: #282b2b;}
       ". ReviewActions . ActionNav ."
       ". NavBar NavBar NavBar .";
     font-family: consolas;
-    color:#fcf2c2
+    color:#fcf2c2;
   }
   
   .ActionIcon { grid-area: ActionIcon;

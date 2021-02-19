@@ -1,5 +1,5 @@
 //display case title & Key Image
-document.getElementById("diagnosis").innerText = localStorage.case4Title;
+document.getElementById("diagnosis").innerText = ("Case 4: " + localStorage.case4Title);
 document.getElementById("keyImage").src = ("http://drive.google.com/uc?export=view&id=" + localStorage.case4KeyImg);
 var time_score = -1*( parseInt(localStorage.minutes)*60 + parseInt(localStorage.seconds));
 //Show Result

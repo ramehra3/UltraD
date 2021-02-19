@@ -1,3 +1,5 @@
+html {background-color: #282b2b;}
+
 .ui-tooltip {
     position: absolute;
     background: #f9a235;
@@ -12,7 +14,7 @@ b {
 
 .ProgressReportBox {
  display: grid;
- grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr;
+ grid-template: 8vw 15vw 15vw 10vw 10vw 10vw / 25vw 15vw 10vw 10vw 10vw 10vw;
  gap: 15px 15px;
  grid-template-areas:
    "Logo Logo Logo Logo Logo Logo"
@@ -22,6 +24,8 @@ b {
    "Category ActionBreakdown ClassAverage LocationBreakdown LocationReveal LocationReveal"
    "Navigation Navigation Navigation Navigation Navigation Navigation";
  padding: 5vw 5vw 5vw 5vw;
+ font-family:consolas;
+ color:#FCFDC2;
 }
 
 .Logo {
@@ -29,10 +33,10 @@ b {
 }
 
 .Logo img {
- width: 50%;
+ width: 10%;
  height: auto;
- margin-left: 25%;
- margin-right: 25%;
+ margin-left: 50%;
+ margin-right: 50%;
 }
 
 .Title {
@@ -40,12 +44,10 @@ b {
  text-align: center;
  font-size: 3.5vw;
  color: #E57200;
- font-family: 'Libre Franklin', sans-serif;
  font-weight: 150;
  background-color: #0096DF;
  border: 4px solid #FF3500;
  border-radius: 8px;
-}
 }
 
 .ScoreData {
@@ -57,7 +59,6 @@ b {
  border-radius: 8px;
  text-align: center;
  font-size: 2vw;
- font-family: "Libre Franklin", sans-serif;
 }
 
 .MostMissed {
@@ -69,27 +70,23 @@ b {
  border-radius: 8px;
  text-align: center;
  font-size: 2vw;
- font-family: "Libre Franklin", sans-serif;
 }
 
 .Category {
  grid-area: Category;
  font-size: 2vw;
- font-family: "Lora", sans-serif;
  text-align: center;
 }
 
 .ActionBreakdown {
  grid-area: ActionBreakdown;
  font-size: 2vw;
- font-family: "Lora", sans-serif; 
  text-align: center;
 }
 
 .ClassAverage {
  grid-area: ClassAverage;
  font-size: 2vw;
- font-family: "Lora", sans-serif; 
  text-align: center;
 }
 
@@ -97,14 +94,12 @@ b {
  grid-area: LocationBreakdown;
  text-align: center;
  font-size: 2vw;
- font-family: "Lora", sans-serif;
 }
 
 .LocationReveal {
  grid-area: LocationReveal;
  text-align: center;
  font-size: 2vw;
- font-family: "Libre Franklin", sans-serif;
 }
 
 .Navigation {
@@ -122,14 +117,13 @@ b {
  position: absolute;
 }
 
-.parent {
+.body {
  width: 1px;
  height: 1px;
  position: absolute;
  z-index: 0;
 }
 
-.inner {}
 
 #ruqicon {
  position: absolute;
