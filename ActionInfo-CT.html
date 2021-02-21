@@ -14,10 +14,8 @@
 <link rel="stylesheet" href="ActionInfo.css">
 <div class="grid-container">
 <div class="Header">
-    <a href=ActionInfo-Obs.html>Observation</a> | <a href=ActionInfo-CT.html>CT Scan</a> | <a href=ActionInfo-Surgery.html>Surgery</a> | <a href=ActionInfo-Intervene.html>Intervention</a>
+    <h1>Action Information</h1>
 </div>
-
-
 
 <div class="Action">
     <h1 id="reviewAction">
@@ -40,7 +38,19 @@
 
 
 <div class="NavBar">
-    <a href=Main%20UI.html>Begin Shift</a> | <a href=Progress%20Report.html>Progress Report</a> | <a href="ShiftReview.html">Review Shift</a>
+        <div class="dropdown">
+          <button onclick="dropdown()" class="NavButton">Actions <img src="./ProgramFiles/Icons/capicon/capicon/png/black/089.png" class="NavIcon"></button>
+          <div id="ActionDropdown" class="dropdown-content">
+            <a href="ActionInfo-Obs.html">Observation</a>
+            <a href="ActionInfo-CT.html">CT Scan</a>
+            <a href="ActionInfo-Surgery.html">Surgery</a>
+            <a href="ActionInfo-Intervene.html">Intervention</a>
+          </div>
+        </div>
+        <a class="NavButton" href="Progress%20Report.html">Progress Report <img src="ProgramFiles/Icons/progress.svg" class="NavIcon"></a>
+        <a class="NavButton" href="ShiftReview.html">Shift Review <img src="ProgramFiles/Icons/server.svg" class="NavIcon"></a>
+        <a class="NavButton" href="Main%20UI.html">New Shift <img src="./ProgramFiles/Icons/capicon/capicon/png/black/076.png" class="NavIcon">
+      </div>
 </div>
 </div>
 </html>

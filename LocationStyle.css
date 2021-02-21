@@ -1,5 +1,12 @@
 html { background-color: #282b2b;}
 
+/* 
+To-Do
+Align Buttons on body
+New Shift Button
+*/
+
+
 .grid-container {
   display: grid;
   grid-template-columns: 10% 40% 40% 10%;
@@ -111,7 +118,7 @@ html { background-color: #282b2b;}
   }
   
   .example_a, .dropbtn {
-  color: white;
+  color: #000000;
   text-transform: uppercase;
   width: 90%;
   text-decoration: none;
