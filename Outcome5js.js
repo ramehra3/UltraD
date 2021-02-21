@@ -36,16 +36,16 @@ document.getElementById("explanation").innerText = (localStorage.case5Outcome);
 
 //Show correct Remember Box
 if (localStorage.case5KeyAction === "Observation")
-    {document.getElementById("rememberBox").src= './ProgramFiles/RememberObs.svg'};
+    {document.getElementById("rememberBox").src= './ProgramFiles/RememberBoxes/Light/RememberObs.svg'};
 
 if (localStorage.case5KeyAction === "CT Scan")
-    {document.getElementById("rememberBox").src= './ProgramFiles/RememberCT.svg'};
+    {document.getElementById("rememberBox").src= './ProgramFiles/RememberBoxes/Light/RememberCT.svg'};
 
 if (localStorage.case5KeyAction === "Surgery")
-    {document.getElementById("rememberBox").src= './ProgramFiles/RememberSurg.svg'};
+    {document.getElementById("rememberBox").src= './ProgramFiles/RememberBoxes/Light/RememberSurg.svg'};
 
 if (localStorage.case5KeyAction === "Intervention")
-    {document.getElementById("rememberBox").src= './ProgramFiles/RememberInt.svg'};
+    {document.getElementById("rememberBox").src= './ProgramFiles/RememberBoxes/Light/RememberInt.svg'};
 //Score Calculator
 
 $('#decPoints1').text(decision_score);
