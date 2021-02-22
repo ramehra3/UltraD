@@ -16,7 +16,7 @@ color:#fcf2c2;
 .ANavigation {
   width: 100%;
   background-color: #0096DF;
-  overflow: auto;
+  overflow: visible;
 }
 
 /* Navigation links */
@@ -26,8 +26,8 @@ color:#fcf2c2;
   color: white;
   text-decoration: none;
   font-size: 18px;
-  width: 24.9%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
-  text-align: center; /* If you want the text to be centered */
+  width: 25%;
+  text-align: center;
 }
 
 /* Add a background color on mouse-over */
@@ -69,31 +69,20 @@ color:#fcf2c2;
     width:50vw;
     padding: 10px;
 }
-
+  
 .Navigation {
-    display: grid;
-    grid-template-columns: auto;
-    gap: 1px 1px;
-    grid-template-areas:
-    "BeginShift Progress-Report Review-Shift";
-    grid-area: Navigation;
-    align-items: center;
-    display:inline-grid;
+width: 75%;
+overflow: visible;
 }
-
-.ALButton {
-    box-shadow:inset 0px 1px 0px 0px #ffffff;
-    background-color:#31BBF6;
-    text-align: center;
-    border-radius:3px;
-    border:1px solid #dcdcdc;
-    display:inline-block;
-    cursor:pointer;
-    color:#000000;
-    font-family:Consolas;
-    font-size:1vw;
-    padding:6px 200px;
-    text-decoration:none;
+  
+.Navigation a {
+padding: 10px;
+float: left;
+color: white;
+text-decoration: none;
+font-size: 18px;
+width: 33.3%%;
+text-align: center;
 }
 
 .NavButton {
@@ -107,7 +96,7 @@ color:#fcf2c2;
     color:#000000;
     font-family:Consolas;
     font-size:2vw;
-    padding:6px 75px;
+    padding:6px 24px;
     text-decoration:none;
 }
 
