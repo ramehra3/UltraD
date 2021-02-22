@@ -19,8 +19,8 @@ color:#fcf2c2;
 
 .ActionLinks { 
     grid-area: 1 / 2 / 2 / 6;
-    display: block;
-    padding: 8px;
+    display: inline;
+    align-items: center;
     background-color: #9CE5A3;
 }
 
