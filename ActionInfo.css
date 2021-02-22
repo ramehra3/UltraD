@@ -71,13 +71,14 @@ color:#fcf2c2;
 .Navigation {
   align-items: center;
   overflow: hidden;
-  width: 75%;
+  width: 100%;
 }
 
 .Navigation a {
   float: left;
   display: inline-block;
   margin: 5px;
+  background-color: #0096DF;
   color: white;
   text-align: center;
   text-decoration: none;
