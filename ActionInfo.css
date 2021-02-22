@@ -21,11 +21,11 @@ color:#fcf2c2;
 
 /* Navigation links */
 .ANavigation a {
-  padding: 12px;
+  padding: 10px;
   float: left;
   color: white;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   width: 25%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
   text-align: center; /* If you want the text to be centered */
 }
