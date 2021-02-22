@@ -71,32 +71,25 @@ color:#fcf2c2;
   
 .Navigation {
 width: 75%;
-overflow: visible;
+overflow: auto;
 }
   
 .Navigation a {
-padding: 10px;
-float: left;
-color: white;
-text-decoration: none;
-font-size: 18px;
-width: 33.3%%;
-text-align: center;
-}
-
-.NavButton {
-    box-shadow:inset 0px 1px 0px 0px #ffffff;
-    background-color:#31BBF6;
-    text-align: center;
-    border-radius:6px;
-    border:1px solid #dcdcdc;
-    display:inline-block;
-    cursor:pointer;
-    color:#000000;
-    font-family:Consolas;
-    font-size:2vw;
-    padding:6px 24px;
-    text-decoration:none;
+   box-shadow:inset 0px 1px 0px 0px #ffffff;
+   background-color:#31BBF6;
+   text-align: center;
+   border-radius:6px;
+   border:1px solid #dcdcdc;
+   display:inline-block;
+   cursor:pointer;
+   color:#000000;
+   font-family:Consolas;
+   font-size:2vw;
+   padding:10px;
+   text-decoration:none;
+   float: left;
+   color: white;
+   width: 33.3%%;
 }
 
 .NavIcon {
