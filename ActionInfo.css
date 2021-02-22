@@ -19,20 +19,30 @@ color:#fcf2c2;
 
 .ActionLinks { 
     grid-area: 1 / 2 / 2 / 6;
-    display: grid;
-    gap: 1px 1px;
-    align-items: center;
-    display:inline-grid;
+    display: block;
+    padding: 8px;
+    background-color: #9CE5A3;
 }
 
-.Action { grid-area: 2 / 3 / 3 / 5; }
+.Action { 
+    grid-area: 2 / 3 / 3 / 5;
+    display: block;
+    text-align: center;
+}
 
 .ActionIcon {
     grid-area: 3 / 3 / 5 / 5;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
     height:10vw; 
     }
 
-.ActionInfo {  grid-area: 5 / 1 / 6 / 7; }
+.ActionInfo {
+    grid-area: 5 / 1 / 6 / 7;
+    display: block;
+    text-align: center;
+}
 
 .RememberBox { grid-area: 6 / 2 / 10 / 6; 
     margin-left:auto;
@@ -42,9 +52,8 @@ color:#fcf2c2;
 
 .NavBar {
     grid-area: 10 / 2 / 12 / 6;
-    display: grid;
-    gap: 1px 1px;
-    align-items: center;
-    display:inline-grid;
+    display: block;
+    padding: 8px;
+    background-color: #9CE5A3;
 }
 
