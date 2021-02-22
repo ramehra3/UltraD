@@ -13,8 +13,7 @@ color:#fcf2c2;
 }
 
 .ActionLinks { 
-    display: block;
-    align-items: center;
+    display: inline-block;
     padding: 5px;
 }
 
@@ -49,8 +48,7 @@ color:#fcf2c2;
 }
 
 .NavBar {
-    display: grid;
-    display: inline-grid;
+    display: inline-block;
 }
 
 .ALButton {
