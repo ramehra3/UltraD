@@ -40,7 +40,8 @@ color:#fcf2c2;
 
 .ActionInfo {
     grid-area: 5 / 1 / 6 / 7;
-    display: block;
+    display: grid;
+    display: inline-grid;
     text-align: center;
 }
 
@@ -52,6 +53,8 @@ color:#fcf2c2;
 
 .NavBar {
     grid-area: 10 / 2 / 12 / 6;
+    display: grid;
+    display: inline-grid;
 }
 
 .NavButton {
