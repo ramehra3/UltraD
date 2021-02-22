@@ -12,13 +12,32 @@ font-family: consolas;
 color:#fcf2c2; 
 }
 
+/* Style the navigation menu */
 .ANavigation {
-    display: grid;
-    display: inline-grid;
-    grid-template-columns: auto;
-    grid-template-areas: "Observation CTScan Surgery Intervention";
-    grid-area: ANavigation;
-    align-items: center;
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+/* Navigation links */
+.ANavigation a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  width: 25%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+  text-align: center; /* If you want the text to be centered */
+}
+
+/* Add a background color on mouse-over */
+.ANavigation a:hover {
+  background-color: #000;
+}
+
+/* Style the current/active link */
+.ANavigation a.active {
+  background-color: #4CAF50;
 }
 
 .Action {
@@ -53,7 +72,7 @@ color:#fcf2c2;
 
 .Navigation {
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: auto;
     gap: 1px 1px;
     grid-template-areas:
     "BeginShift Progress-Report Review-Shift";
@@ -88,7 +107,7 @@ color:#fcf2c2;
     color:#000000;
     font-family:Consolas;
     font-size:2vw;
-    padding:6px 48px;
+    padding:6px 75px;
     text-decoration:none;
 }
 
