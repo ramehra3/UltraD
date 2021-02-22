@@ -13,7 +13,12 @@ color:#fcf2c2;
 }
 
 .ANavigation {
-    display: inline-block;
+    display: grid;
+    display: inline-grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    grid-template-areas: "Observation CTScan Surgery Intervention";
+    grid-area: ANavigation;
+    align-items: center;
 }
 
 .Action {
