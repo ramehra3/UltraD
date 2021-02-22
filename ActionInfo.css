@@ -24,7 +24,7 @@ color:#fcf2c2;
   color: white;
   text-decoration: none;
   font-size: 18px;
-  width: 24%;
+  width: 23%;
   text-align: center;
 }
 
@@ -71,8 +71,6 @@ color:#fcf2c2;
 .Navigation {
   background-color: #0096DF;
   overflow: hidden;
-  position: fixed;
-  bottom: 0;
   width: 100%;
 }
 
