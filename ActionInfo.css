@@ -52,8 +52,23 @@ color:#fcf2c2;
 
 .NavBar {
     grid-area: 10 / 2 / 12 / 6;
-    display: block;
-    padding: 8px;
-    background-color: #9CE5A3;
 }
 
+.NavButton {
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background-color:#31BBF6;
+    text-align: center;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    cursor:pointer;
+    color:#000000;
+    font-family:Consolas;
+    font-size:2vw;
+    padding:6px 24px;
+    text-decoration:none;
+}
+
+.NavIcon {
+    height:2vw;
+}
