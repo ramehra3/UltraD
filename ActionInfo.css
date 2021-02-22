@@ -37,16 +37,5 @@ color:#fcf2c2;
 
 .NavBar {
     grid-area: 1 / 2 / 2 / 6;
-    display: grid;
-    grid-template-columns: 32% 32% 32%;
-    gap: 1px 1px;
-    grid-template-areas:
-    "Begin-Shift Progress-Report Review-Shift";
-    grid-area: NavBar;
-    align-items: center;
-    display:inline-grid;
 }
 
-.Begin-Shift { grid-area: Begin-Shift; }
-.Progress-Report { grid-area: Progress-Report; }
-.Review-Shift { grid-area: Review-Shift; }
