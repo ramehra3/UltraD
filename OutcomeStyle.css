@@ -1,13 +1,27 @@
+html {background-color: #282b2b;}
+
+/* 
+To-Do:
+    Align Content titles
+    Fit US Image in grid
+    Nav Bar spacing
+    Point Border - Change color & round borders
+*/
+
+
 .grid-container {
     display: grid;
-    grid-template-columns: 48vw 49vw;
-    grid-template-rows: 10vw 25vw 31vw 10vw;
+    grid-template-columns: 10vw 40vw 40vw 10vw;
+    grid-template-rows: 10vw 25vw 20vw 10vw 10vw;
     gap: 1px 1px;
     grid-template-areas:
-    "Outcome Points"
-    "Action Key"
-    "Remember Key"
-    "Point-Breakdown Navigation";
+    ". Outcome Points ."
+    ". Action Key ."
+    ". Remember Key ."
+    ". . Point-Breakdown ."
+    "Navigation Navigation Navigation Navigation";
+    font-family: consolas;
+    color:#fcf2c2;
 }
 .Outcome { grid-area: Outcome;
     font-size:3vw;}
@@ -29,12 +43,10 @@
 
 .Navigation {
     display: grid;
-    grid-template-columns: 20vw 30vw;
-    grid-template-rows: 10vw 10vw;
+    grid-template-columns: 17% 25% 25% 30%;
     gap: 1px 1px;
     grid-template-areas:
-    "Retry NextCase"
-    "Review-Set Progress-Report";
+    "Retry NextCase Review-Set Progress-Report";
     grid-area: Navigation;
     align-items: center;
     display:inline-grid;
@@ -57,6 +69,7 @@
     "Image-Acquisition imagePoints"
     "Time timePoints"
     "Total totalPoints";
+    border:dotted;
 }
 .points { grid-area: points;
     text-align:center;}
@@ -80,9 +93,6 @@
     border-radius:50%;
     height:6vw;
 }
-#action {
-
-}
 
 
 h3 {
@@ -90,136 +100,20 @@ h3 {
     font-size:2vw;
 }
 
-#takeAwayBox {
-    border:dot-dot-dash;
-}
 
 .remember{
     height:8vw;
 }
 
-figure {
-    text-align:center;
-    font-size:2.5vw;
-}
 
-.arrow {
-    height:4vw;
-}
 
-#imageBreakdown {
 
-}
 #keyImage {
-    height:33vw;
+    width:100%;
+    height:75%;
 }
 #diagnosis {
     font-size:3vw;
     margin-bottom:0;
     text-align:center;
 }
-
-#pointBreakdown{
-
-}
-
-.RetryButton {
-    box-shadow:inset 0px 1px 0px 0px #ffffff;
-    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-    background-color:#ffffff;
-    border-radius:6px;
-    border:1px solid #dcdcdc;
-    display:inline-block;
-    cursor:pointer;
-    color:#666666;
-    font-family:Arial;
-    font-size:2vw;
-    font-weight:bold;
-    padding:6px 24px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #ffffff;
-}
-.RetryButton:hover {
-    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-    background-color:#f6f6f6;
-}
-.RetryButton:active {
-    position:relative;
-    top:1px;
-}
-.NextCaseButton {
-    box-shadow:inset 0px 1px 0px 0px #ffffff;
-    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-    background-color:#ffffff;
-    border-radius:6px;
-    border:1px solid #dcdcdc;
-    display:inline-block;
-    cursor:pointer;
-    color:#666666;
-    font-family:Arial;
-    font-size:2vw;
-    font-weight:bold;
-    padding:6px 24px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #ffffff;
-}
-.NextCaseButton:hover {
-    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-    background-color:#f6f6f6;
-}
-.NextCaseButton:active {
-    position:relative;
-    top:1px;
-}
-
-.ReviewShiftButton {
-    box-shadow:inset 0px 1px 0px 0px #ffffff;
-    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-    background-color:#ffffff;
-    border-radius:6px;
-    border:1px solid #dcdcdc;
-    display:inline-block;
-    cursor:pointer;
-    color:#666666;
-    font-family:Arial;
-    font-size:2vw;
-    font-weight:bold;
-    padding:6px 24px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #ffffff;
-}
-.ReviewShiftButton:hover {
-    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-    background-color:#f6f6f6;
-}
-.ReviewShiftButton:active {
-    position:relative;
-    top:1px;
-}
-
-.EndShiftButton {
-    box-shadow:inset 0px 1px 0px 0px #ffffff;
-    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-    background-color:#ffffff;
-    border-radius:6px;
-    border:1px solid #dcdcdc;
-    display:inline-block;
-    cursor:pointer;
-    color:#666666;
-    font-family:Arial;
-    font-size:2vw;
-    font-weight:bold;
-    padding:6px 24px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #ffffff;
-}
-.EndShiftButton:hover {
-    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-    background-color:#f6f6f6;
-}
-
-.EndShiftButton:active {
-    position:relative;
-    top:1px;
-}
-
