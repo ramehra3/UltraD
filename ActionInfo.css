@@ -18,21 +18,7 @@ color:#fcf2c2;
 }
 
 .ActionLinks { 
-    grid-area: 2 / 3 / 3 / 5;
-    display: grid;
-    grid-template-columns: 21% 21% 21% 21%;
-    gap: 1px 1px;
-    grid-template-areas:
-    "Observation CTScan Surgery Intervention";
-    grid-area: ActionLinks;
-    align-items: center;
-    display:inline-grid;
 }
-
-.Observation { grid-area: Observation; }
-.CTScan { grid-area: CTScan; }
-.Surgery { grid-area: Surgery; }
-.Intervention { grid-area: Intervention; }
 
 .Action { grid-area: 3 / 3 / 5 / 5; }
 
