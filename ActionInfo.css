@@ -11,8 +11,6 @@ Navigation Links into Buttons
 display: grid;
 grid-template-columns: repeat(6, 1fr);
 grid-template-rows: repeat(3, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px; 
 font-family: consolas;
 color:#fcf2c2; 
 }
