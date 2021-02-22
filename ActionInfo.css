@@ -69,6 +69,8 @@ color:#fcf2c2;
 }
 
 .Navigation {
+  display: inline-block;
+  margin: 5px;
   background-color: #0096DF;
   overflow: hidden;
   width: 100%;
@@ -86,4 +88,8 @@ color:#fcf2c2;
 
 .Navigation a:hover {
   background-color: #31BBF6;
+}
+
+.NavIcon {
+    height:10px;
 }
