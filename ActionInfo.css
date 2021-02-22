@@ -15,7 +15,7 @@ color:#fcf2c2;
 .ANavigation {
     display: grid;
     display: inline-grid;
-    grid-template-columns: 30% 23% 23% 30%;
+    grid-template-columns: 24% 24% 24% 24%;
     grid-template-areas: "Observation CTScan Surgery Intervention";
     grid-area: ANavigation;
     align-items: center;
@@ -73,7 +73,7 @@ color:#fcf2c2;
     color:#000000;
     font-family:Consolas;
     font-size:1vw;
-    padding:20%;
+    padding:6px 75px;;
     text-decoration:none;
 }
 
