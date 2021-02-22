@@ -8,53 +8,57 @@ Navigation Links into Buttons
 */
 
 .parent {
-display: grid;
-grid-template-columns: repeat(6, 1fr);
-grid-template-rows: repeat(11, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px;
 font-family: consolas;
 color:#fcf2c2; 
 }
 
 .ActionLinks { 
-    grid-area: 1 / 2 / 2 / 6;
-    display: inline;
-    align-items: center;
-    background-color: #9CE5A3;
+    display: grid;
+    display: inline-grid;
 }
 
-.Action { 
-    grid-area: 2 / 3 / 3 / 5;
+.Action {
     display: block;
     text-align: center;
 }
 
 .ActionIcon {
-    grid-area: 3 / 3 / 5 / 5;
+    display: block;
+    align-items: center;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
     height:10vw; 
     }
 
 .ActionInfo {
-    grid-area: 5 / 1 / 6 / 7;
-    display: grid;
-    display: inline-grid;
+    display: block;
     text-align: center;
 }
 
-.RememberBox { grid-area: 6 / 2 / 10 / 6; 
+.RememberBox { 
     margin-left:auto;
     margin-right:auto;
     width:50vw;
 }
 
 .NavBar {
-    grid-area: 10 / 2 / 12 / 6;
     display: grid;
     display: inline-grid;
+}
+
+.ALButton {
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background-color:#31BBF6;
+    text-align: center;
+    border-radius:3px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    cursor:pointer;
+    color:#000000;
+    font-family:Consolas;
+    font-size:1vw;
+    padding:3px 12px;
+    text-decoration:none;
 }
 
 .NavButton {
