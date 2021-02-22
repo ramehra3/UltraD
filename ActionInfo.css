@@ -77,9 +77,9 @@ color:#fcf2c2;
 }
 
 .Navigation a {
-  float: left;
+  float: none;
   display: block;
-  color: #white;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
