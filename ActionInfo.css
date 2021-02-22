@@ -16,7 +16,7 @@ color:#fcf2c2;
 .ANavigation {
   width: 100%;
   background-color: #0096DF;
-  overflow: visible;
+  overflow: hidden;
 }
 
 /* Navigation links */
