@@ -12,6 +12,17 @@ font-family: consolas;
 color:#fcf2c2; 
 }
 
+.ANavigation {
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    gap: 1px 1px;
+    grid-template-areas:
+    "Observation CTScan Surgery Intervention";
+    grid-area: ANavigation;
+    align-items: center;
+    display:inline-grid;
+}
+
 .Action {
     display: block;
     text-align: center;
@@ -40,6 +51,17 @@ color:#fcf2c2;
     margin-right:auto;
     width:50vw;
     padding: 10px;
+}
+
+.Navigation {
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    gap: 1px 1px;
+    grid-template-areas:
+    "BeginShift Progress-Report Review-Shift";
+    grid-area: Navigation;
+    align-items: center;
+    display:inline-grid;
 }
 
 .ALButton {
