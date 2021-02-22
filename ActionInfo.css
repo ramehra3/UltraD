@@ -13,8 +13,8 @@ color:#fcf2c2;
 }
 
 .ActionLinks { 
-    display: grid;
-    display: inline-grid;
+    display: block;
+    align-items: center;
 }
 
 .Action {
