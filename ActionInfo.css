@@ -24,7 +24,7 @@ color:#fcf2c2;
   color: white;
   text-decoration: none;
   font-size: 18px;
-  width: 23%;
+  width: 24%;
   text-align: center;
 }
 
@@ -67,23 +67,25 @@ color:#fcf2c2;
     width:50vw;
     padding: 10px;
 }
-  
+
 .Navigation {
   background-color: #0096DF;
   overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
-  
+
 .Navigation a {
-  padding: 10px;
   float: left;
-  color: white;
+  display: block;
+  color: #white;
+  text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
   font-size: 18px;
-  width: 33%;
-  text-align: center;
 }
 
 .Navigation a:hover {
   background-color: #31BBF6;
 }
-
