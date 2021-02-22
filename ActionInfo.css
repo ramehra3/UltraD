@@ -14,13 +14,11 @@ color:#fcf2c2;
 
 .ANavigation {
     display: grid;
+    display: inline-grid;
     grid-template-columns: 24% 24% 24% 24%;
-    gap: 1px 1px;
-    grid-template-areas:
-    "Observation CTScan Surgery Intervention";
+    grid-template-areas: "Observation CTScan Surgery Intervention";
     grid-area: ANavigation;
     align-items: center;
-    display:inline-grid;
 }
 
 .Action {
