@@ -15,7 +15,7 @@ color:#fcf2c2;
 .ANavigation {
     display: grid;
     display: inline-grid;
-    grid-template-columns: auto;
+    grid-template-columns: 25% 25% 25% 25%;
     grid-template-areas: "Observation CTScan Surgery Intervention";
     grid-area: ANavigation;
     align-items: center;
