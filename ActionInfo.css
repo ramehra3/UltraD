@@ -8,11 +8,6 @@ Navigation Links into Buttons
 */
 
 .parent {
-display: grid;
-grid-template-columns: repeat(6, 1fr);
-grid-template-rows: repeat(6, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px; 
 font-family: consolas;
 color:#fcf2c2; 
 }
@@ -23,30 +18,33 @@ color:#fcf2c2;
     padding: 10px;
 }
 
-.Observation { grid-area: 1 / 2 / 2 / 3; }
-.CTScan { grid-area: 1 / 3 / 2 / 4; }
-.Surgery { grid-area: 1 / 4 / 2 / 5; }
-.Intervention { grid-area: 1 / 5 / 2 / 6; } 
-
 .Action {
-    grid-area: 2 / 1 / 3 / 7;
+    display: block;
+    text-align: center;
 }
 
 .ActionIcon {
-    grid-area: 3 / 1 / 4 / 7;
+    display: block;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    height:10vw;
+    padding: 10px;
     }
 
 .ActionInfo {
-    grid-area: 4 / 1 / 5 / 7;
+    display: block;
+    text-align: center;
+    padding: 10px;
 }
 
 .RememberBox {
-    grid-area: 5 / 1 / 6 / 7;
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    width:50vw;
+    padding: 10px;
 }
-
-.BeginShift { grid-area: 6 / 1 / 7 / 3; }
-.Progress-Report { grid-area: 6 / 3 / 7 / 5; }
-.Review-Shift { grid-area: 6 / 5 / 7 / 7; }
 
 .NavBar {
     display: grid;
