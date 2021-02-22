@@ -77,13 +77,13 @@ color:#fcf2c2;
 .Navigation a {
   float: left;
   display: inline-block;
-  margin: 30px;
+  margin: 20px;
   background-color: #0096DF;
   color: white;
   text-align: center;
   text-decoration: none;
   font-size: 18px;
-  width: 33%;
+  width: 30%;
 }
 
 .Navigation a:hover {
