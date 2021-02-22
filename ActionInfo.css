@@ -24,7 +24,7 @@ color:#fcf2c2;
     gap: 1px 1px;
     grid-template-areas:
     "Observation CTScan Surgery Intervention";
-    grid-area: NavBar;
+    grid-area: ActionLinks;
     align-items: center;
     display:inline-grid;
 }
