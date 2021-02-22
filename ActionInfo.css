@@ -69,19 +69,17 @@ color:#fcf2c2;
 }
 
 .Navigation {
-  display: inline-block;
-  margin: 5px;
   background-color: #0096DF;
   overflow: hidden;
   width: 100%;
 }
 
 .Navigation a {
-  float: none;
-  display: block;
+  float: left;
+  display: inline-block;
+  margin: 5px;
   color: white;
   text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
   font-size: 18px;
 }
@@ -91,5 +89,5 @@ color:#fcf2c2;
 }
 
 .NavIcon {
-    height:10px;
+    height:20px;
 }
