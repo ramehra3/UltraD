@@ -18,28 +18,33 @@ color:#fcf2c2;
 }
 
 .ActionLinks { 
+    grid-area: 1 / 2 / 2 / 6;
     display: grid;
     gap: 1px 1px;
     align-items: center;
     display:inline-grid;
 }
 
-.Action { grid-area: 3 / 3 / 5 / 5; }
+.Action { grid-area: 2 / 3 / 3 / 5; }
 
 .ActionIcon {
-    grid-area: 5 / 1 / 6 / 7;
+    grid-area: 3 / 3 / 5 / 5;
     height:10vw; 
     }
 
-.ActionInfo { grid-area: 6 / 2 / 10 / 6; }
+.ActionInfo {  grid-area: 5 / 1 / 6 / 7; }
 
-.RememberBox { grid-area: 10 / 2 / 12 / 6; 
+.RememberBox { grid-area: 6 / 2 / 10 / 6; 
     margin-left:auto;
     margin-right:auto;
     width:50vw;
 }
 
 .NavBar {
-    grid-area: 1 / 2 / 2 / 6;
+    grid-area: 10 / 2 / 12 / 6;
+    display: grid;
+    gap: 1px 1px;
+    align-items: center;
+    display:inline-grid;
 }
 
