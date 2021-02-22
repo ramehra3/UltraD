@@ -18,6 +18,10 @@ color:#fcf2c2;
 }
 
 .ActionLinks { 
+    display: grid;
+    gap: 1px 1px;
+    align-items: center;
+    display:inline-grid;
 }
 
 .Action { grid-area: 3 / 3 / 5 / 5; }
