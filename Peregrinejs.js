@@ -1,3 +1,5 @@
+
+
 var JSONFEED = 'https://spreadsheets.google.com/feeds/list/1dpcguZ2Ak0zc0Sh1WoPV0c0tXVxre3yGWC1Wo5ElWtc/1/public/basic?alt=json';
 
 $(document).ready(function() {
@@ -14,8 +16,9 @@ function readData(data) {
   var divData = [];
   var length2 = Object.keys(partfeed).length-1;
   //console.log(length2);
-  
+  // random number for the row where the case will be pulled from
   var i = 0 + Math.floor(Math.random() * length2);
+  localStorage.caseNum = i;
   //console.log(i, ':i');
     var JSONrow = partfeed[i].content.$t.split(',');
     var row = [];
@@ -67,7 +70,6 @@ function drawDiv(divData, thehistory, parent, loc) {
   console.log("Key Action: " + localStorage.case1KeyAction);
 
   var $caseDiv = $("<div/>");
-  $caseDiv.addClass('Case-Details');  
   var casedetails = $("<p></p>").html("A " + age + "-year-old " + gender + " " + scenario); 
   $caseDiv.prepend(casedetails);
   $('#caseDetails').append($caseDiv);
@@ -91,7 +93,7 @@ function showActions() {
         x.style.display = "block";}
     else {x.style.display = "none";}
 }
-showActions();
+//showActions();
 
 let sec = 0;
 function pad(val) {return val > 9 ? val : "0" + val;}
@@ -205,8 +207,6 @@ function actionIntervene() {
     window.location.href = "Outcome1.html";
 }
 
-
-
 //success or fail message
 /*
 if (actionChoice === "CT Scan") {
@@ -218,3 +218,13 @@ else {document.getElementById("result").innerText = ("Uh Oh!!");
 
 //display outcomes on outcome pages
 //if i give outcomes their own js page, how will the ultimate outcome be recorded? 
+var db = firebase.firestore();
+var file_path = '/users/' + localStorage.userId + '/sessions';
+
+var docref = db.collection(file_path).doc()
+docref.set({
+    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+})
+
+collectionRef = db.collection(file_path);
+
