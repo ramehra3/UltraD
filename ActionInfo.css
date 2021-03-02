@@ -14,7 +14,7 @@ color:#fcf2c2;
 
 .ANavigation {
   background-color: #0096DF;
-  overflow: scroll;
+  overflow: auto;
   max-width: 92%;
 }
 
