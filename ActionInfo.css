@@ -14,7 +14,8 @@ color:#fcf2c2;
 
 .ANavigation {
   background-color: #0096DF;
-  overflow: hidden;
+  overflow: scroll;
+  max-width: 92%;
 }
 
 /* Navigation links */
